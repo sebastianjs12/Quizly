@@ -31,4 +31,12 @@ public class TeacherHomepage extends Activity{
             startActivity(i);
         }
     }
+
+    //Create Quiz
+    public void clickCreateQuiz(View v) {
+        if (v.getId() == R.id.CreateQuiz) {
+            Intent i = new Intent(TeacherHomepage.this, TeacherCreateQuiz.class);
+            startActivity(i);
+        }
+    }
 }

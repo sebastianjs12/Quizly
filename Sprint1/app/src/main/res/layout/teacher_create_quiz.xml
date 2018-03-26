@@ -4,53 +4,84 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Question" />
+
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter question here" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice One" />
 
     <EditText
         android:id="@+id/answerOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer choice one" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice Two" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/answertwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer choice two" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice 3" />
 
     <EditText
+        android:id="@+id/answerthree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer choice three" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice 4" />
 
     <EditText
+        android:id="@+id/answerfour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer choice four" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/addQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickAddQuestion"
         android:text="Add Question" />
 
     <Button
         android:id="@+id/createQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickCreateQuiz"
         android:text="Create Quiz" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickCancel"
+        android:text="Cancel" />
 </LinearLayout>

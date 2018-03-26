@@ -12,17 +12,22 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Due Date" />
+
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/duedate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="date"
-        android:text="Set Due Date" />
+        android:inputType="date" />
 
     <Button
         android:id="@+id/teacher_home_but"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home" />
+        android:onClick="clickHomeButton"
+        android:text="Finish" />
 </LinearLayout>

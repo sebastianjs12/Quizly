@@ -12,25 +12,29 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
-    <Button
+    <RadioButton
+        android:id="@+id/AnswerChoice1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Answer Choice 1" />
+        android:text="A" />
 
-    <Button
+    <RadioButton
+        android:id="@+id/AnswerChoice2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Answer Choice 2" />
+        android:text="B" />
 
-    <Button
+    <RadioButton
+        android:id="@+id/AnswerChoice3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Answer Choice 3" />
+        android:text="C" />
 
-    <Button
+    <RadioButton
+        android:id="@+id/AnswerChoice4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Answer Choice 4" />
+        android:text="D" />
 
     <Button
         android:id="@+id/nextQuestion"

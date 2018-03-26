@@ -21,6 +21,13 @@
         android:text="Manage" />
 
     <Button
+        android:id="@+id/CreateQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickCreateQuiz"
+        android:text="Create Quiz" />
+
+    <Button
         android:id="@+id/teacherLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

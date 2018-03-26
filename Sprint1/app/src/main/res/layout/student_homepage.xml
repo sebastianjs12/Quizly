@@ -5,18 +5,23 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/availableQuizzes"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Quiz"
-        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:text="Homepage"
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/addQuiz"
+        android:id="@+id/StudentAddQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickStudentAddQuiz"
         android:text="Add Quiz" />
-
-
+    <Button
+        android:id="@+id/studentLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickLogout"
+        android:text="Logout" />
 </LinearLayout>

@@ -30,7 +30,7 @@ public class CreateStudentAccount extends Activity {
             EditText pw =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = pw.getText().toString();
 
-            Intent i = new Intent(CreateStudentAccount.this, TeacherLogin.class);
+            Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);
             startActivity(i);
         }
     }

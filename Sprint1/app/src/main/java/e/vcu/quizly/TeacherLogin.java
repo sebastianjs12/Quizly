@@ -28,7 +28,7 @@ public class TeacherLogin extends Activity {
             EditText password =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = password.getText().toString();
 
-            Intent i = new Intent(TeacherLogin.this, MainActivity.class);
+            Intent i = new Intent(TeacherLogin.this, TeacherHomepage.class);
             startActivity(i);
         }
     }

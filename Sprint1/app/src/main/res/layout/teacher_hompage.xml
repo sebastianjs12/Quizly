@@ -17,6 +17,7 @@
         android:id="@+id/teacherManage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickTeacherManage"
         android:text="Manage" />
 
     <Button

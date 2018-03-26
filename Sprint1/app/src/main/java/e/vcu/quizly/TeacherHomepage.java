@@ -17,6 +17,13 @@ public class TeacherHomepage extends Activity{
         setContentView(R.layout.teacher_hompage);
     }
 
+    //Manage quizzes
+    public void clickTeacherManage(View v) {
+        if (v.getId() == R.id.teacherManage) {
+            Intent i = new Intent(TeacherHomepage.this, TeacherManage.class);
+            startActivity(i);
+        }
+    }
     //Back To Login
     public void clickLogout(View v) {
         if (v.getId() == R.id.teacherLogout) {

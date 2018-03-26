@@ -12,11 +12,30 @@
         android:textAlignment="center"
         android:textSize="30sp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Quiz ID" />
+
+    <EditText
+        android:id="@+id/QuizIdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/addQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Quiz" />
+
+    <Button
+        android:id="@+id/StudentBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBackToHomepage"
+        android:text="Back" />
 
 
 </LinearLayout>

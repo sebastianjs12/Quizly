@@ -18,9 +18,9 @@ public class StudentAddQuiz extends Activity {
     }
 
     //Back To Login
-    public void clickLogout(View v) {
-        if (v.getId() == R.id.studentLogout) {
-            Intent i = new Intent(StudentAddQuiz.this, MainActivity.class);
+    public void clickBackToManage(View v) {
+        if (v.getId() == R.id.StudentBack) {
+            Intent i = new Intent(StudentAddQuiz.this, StudentHomepage.class);
             startActivity(i);
         }
     }

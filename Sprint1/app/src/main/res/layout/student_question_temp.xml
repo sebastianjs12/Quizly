@@ -36,6 +36,7 @@
         android:id="@+id/nextQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickNext"
         android:text="Next" />
 
 </LinearLayout>

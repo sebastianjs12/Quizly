@@ -20,6 +20,16 @@
         <activity android:name=".StudentLogin" ></activity>
         <activity android:name=".CreateStudentAccount" ></activity>
         <activity android:name=".CreateTeacherAccount" ></activity>
+        <activity android:name=".PostQuizCreation" ></activity>
+        <activity android:name=".StudentAddQuiz" ></activity>
+        <activity android:name=".StudentQuestionTemp" ></activity>
+        <activity android:name=".StudentQuizSubmission" ></activity>
+        <activity android:name=".TeacherCreateQuiz" ></activity>
+        <activity android:name=".TeacherHomepage" ></activity>
+        <activity android:name=".StudentHomepage" ></activity>
+        <activity android:name=".TeacherManageLayout" ></activity>
+        <activity android:name=".TeacherQuizAnalytics" ></activity>
+        <activity android:name=".TeacherQuizEdit" ></activity>
     </application>
 
 </manifest>

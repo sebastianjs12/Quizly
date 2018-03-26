@@ -8,7 +8,7 @@
         android:id="@+id/availableQuizzes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Available Quizzes"
+        android:text="Add Quiz"
         android:textAlignment="center"
         android:textSize="30sp" />
 
@@ -19,8 +19,9 @@
         android:text="Add Quiz" />
 
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/studentLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickLogout"
         android:text="Logout" />
 </LinearLayout>

@@ -8,7 +8,7 @@
         android:id="@+id/selectQuizText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Quiz"
+        android:text="Manage Quiz"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -17,23 +17,19 @@
         android:id="@+id/quizOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz 1" />
+        android:text="Quiz Analytics" />
 
     <Button
         android:id="@+id/quizTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz 2" />
+        android:text="Delete Quiz" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/teacherBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickBackToHomepage"
         android:text="Back" />
 
-    <Button
-        android:id="@+id/exit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Exit" />
 </LinearLayout>

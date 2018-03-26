@@ -9,19 +9,20 @@ import android.view.View;
  * Created by Max Vandenesse on 3/26/2018.
  */
 
-public class TeacherManageLayout extends Activity {
+public class StudentAddQuiz extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.teacher_manage_layout);
+        setContentView(R.layout.student_add_quiz);
     }
 
-    //Back To homepage
-    public void clickBackToHomepage(View v) {
-        if (v.getId() == R.id.teacherLogout) {
-            Intent i = new Intent(TeacherManageLayout.this, TeacherHomepage.class);
+    //Back To Login
+    public void clickLogout(View v) {
+        if (v.getId() == R.id.studentLogout) {
+            Intent i = new Intent(StudentAddQuiz.this, MainActivity.class);
             startActivity(i);
         }
     }
+
 }

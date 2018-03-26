@@ -2,27 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz ID: "
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        android:text="Set Due Date" />
+        android:gravity="center_horizontal"
+        android:text="Homepage"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/teacher_home_but"
+        android:id="@+id/teacherManage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home" />
+        android:text="Manage" />
+
+    <Button
+        android:id="@+id/teacherLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickLogout"
+        android:text="Logout" />
 </LinearLayout>

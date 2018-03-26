@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/selectQuizText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Quiz"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/quizOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quiz 1" />
+
+    <Button
+        android:id="@+id/quizTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quiz 2" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit" />
+</LinearLayout>

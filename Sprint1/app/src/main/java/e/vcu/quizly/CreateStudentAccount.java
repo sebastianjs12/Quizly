@@ -68,18 +68,17 @@ public class CreateStudentAccount extends Activity {
                 public void onComplete(@NonNull Task<AuthResult> task){
                     if(task.isSuccessful()){
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(CreateStudentAccount.this, "Registed Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateStudentAccount.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                         finish();
-                        Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);
+                        Intent i = new Intent(CreateStudentAccount.this, StudentLogin.class);
                         startActivity(i);
                     }
                     else{
-                        Toast.makeText(CreateStudentAccount.this, "Registed Unsuccessfully, try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateStudentAccount.this, "Registered Unsuccessfully, try again", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
-            Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);
-            startActivity(i);
+
         }
     }
     //Back To Login

@@ -24,4 +24,11 @@
         android:layout_height="wrap_content"
         android:onClick="clickLogout"
         android:text="Logout" />
+
+    <TextView
+        android:id="@+id/textViewStudentEmail"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:text="Welcome "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 </LinearLayout>

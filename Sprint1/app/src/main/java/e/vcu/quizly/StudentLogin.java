@@ -1,6 +1,7 @@
 package e.vcu.quizly;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 
 public class StudentLogin extends Activity {
     private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
     String usernameStr;
     String passwordStr;
     @Override
@@ -29,6 +31,13 @@ public class StudentLogin extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_login);
         firebaseAuth = FirebaseAuth.getInstance();
+
+
+        if(firebaseAuth.getCurrentUser() != null) {
+            finish();
+            Intent i = new Intent(StudentLogin.this, StudentHomepage.class);
+            startActivity(i);
+        }
     }
 
     //Edit once Database is established
@@ -52,6 +61,7 @@ public class StudentLogin extends Activity {
             Toast.makeText(this, "Password is empty try again", Toast.LENGTH_LONG).show();
             return;
         }
+
         firebaseAuth.signInWithEmailAndPassword(usernameStr, passwordStr).
                 addOnCompleteListener(StudentLogin.this, new OnCompleteListener<AuthResult>(){
             @Override

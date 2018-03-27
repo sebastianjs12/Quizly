@@ -1,11 +1,15 @@
 package e.vcu.quizly;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 
 public class CreateStudentAccount extends Activity {
     private FirebaseAuth firebaseAuth;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,14 @@ public class CreateStudentAccount extends Activity {
         setContentView(R.layout.create_student_account);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+
+        if(firebaseAuth.getCurrentUser() != null){
+            finish();
+            Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);
+            startActivity(i);
+        }
     }
 
 
@@ -33,18 +46,28 @@ public class CreateStudentAccount extends Activity {
 
     //add username and password, create account **waitfor database
     public void clickStudentCreateSubmit(View v) {
-        if (v.getId() == R.id.teacherCreateSubmitButton) {
+        if (v.getId() == R.id.studentCreateSubmitButton) {
             //gather username and password and store to strings
             EditText us =(EditText)findViewById(R.id.teacherUsernameText);
             String usernameStr = us.getText().toString();
             EditText pw =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = pw.getText().toString();
+            if(TextUtils.isEmpty(usernameStr)){
+                Toast.makeText(this, "Username is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if(TextUtils.isEmpty(passwordStr)){
+                Toast.makeText(this, "Password is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            progressBar.setVisibility(View.VISIBLE);
             firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr)
                     .addOnCompleteListener(CreateStudentAccount.this, new OnCompleteListener<AuthResult>(){
                 @Override
-                public void onComplete(Task<AuthResult> task){
+                public void onComplete(@NonNull Task<AuthResult> task){
                     if(task.isSuccessful()){
-
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(CreateStudentAccount.this, "Registed Successfully", Toast.LENGTH_SHORT).show();
                         finish();
                         Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);

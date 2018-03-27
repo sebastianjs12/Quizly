@@ -31,6 +31,9 @@ public class TeacherCreateQuiz extends Activity {
             String choice3Str = choice3.getText().toString();
             EditText choice4 =(EditText)findViewById(R.id.answerfour);
             String choice4Str = choice4.getText().toString();
+            //Send to database
+            //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
+            //Whats the correct answer to this question?
             Intent i = new Intent(TeacherCreateQuiz.this, TeacherCreateQuiz.class);
             startActivity(i);
         }
@@ -46,5 +49,9 @@ public class TeacherCreateQuiz extends Activity {
             Intent i = new Intent(TeacherCreateQuiz.this, TeacherHomepage.class);
             startActivity(i);
         }
+    }
+    //Creates a json objects and pushes it to the database
+    public void sendToDatabase(String question, String choice1, String choice2, String choice3, String choice4){
+        //JSONobj json = New JSONobj;
     }
 }

@@ -61,6 +61,9 @@ public class StudentLogin extends Activity {
                     Intent i = new Intent(StudentLogin.this, StudentHomepage.class);
                     startActivity(i);
                 }
+                else{
+                    Toast.makeText(StudentLogin.this, "User login unsuccessful", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

@@ -12,11 +12,14 @@ import android.widget.EditText;
  */
 
 public class StudentLogin extends Activity {
-
+    private FirebaseAuth firebaseAuth;
+    String usernameStr;
+    String passwordStr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_login);
+        firebaseAuth = Firebase.getInstance();
     }
 
     //Edit once Database is established
@@ -24,15 +27,34 @@ public class StudentLogin extends Activity {
         if (v.getId() == R.id.studentAuthenticateButton) {
             //gather username and password and store to strings
             EditText userName =(EditText)findViewById(R.id.teacherUsernameText);
-            String usernameStr = userName.getText().toString();
+            usernameStr = userName.getText().toString();
             EditText password =(EditText)findViewById(R.id.teacherPasswordText);
-            String passwordStr = password.getText().toString();
+            passwordStr = password.getText().toString();
+            userLogin();
 
-            Intent i = new Intent(StudentLogin.this, StudentHomepage.class);
-            startActivity(i);
         }
     }
-
+    private void userLogin(){
+        if(TextUtils.isEmpty(usernameStr)){
+            Toast.makeText(this, "Username is empty try again", Toast.LENGTH_LONG).show();
+            return
+        }
+        if(TextUtils.isEmpty(passwordStr)){
+            Toast.makeText(this, "Password is empty try again", Toast.LENGTH_LONG).show();
+            return
+        }
+        firebaseAuth.signInWithEmailAndPassword(usernameStr, passwordStr).
+                addOnCompleteListener(this, new onCompleteListener <AuthResults>()){
+            @Override
+            public void onComplete(@NonNull Task<AuthResults> task){
+                if(task.isSuccessful()){
+                    finish();
+                    Intent i = new Intent(StudentLogin.this, StudentHomepage.class);
+                    startActivity(i);
+                }
+            }
+        }
+    }
     //Create Account
     public void clickStudentCreate(View v) {
         if (v.getId() == R.id.studentCreateAccountButton) {

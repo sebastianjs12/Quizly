@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.AuthResult;
 
 /**
  * Created by Max Vandenesse on 3/22/2018.
@@ -33,17 +38,22 @@ public class CreateStudentAccount extends Activity {
             String usernameStr = us.getText().toString();
             EditText pw =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = pw.getText().toString();
-            firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr).addOnCompleteListener(this, onCompleteListener<AuthResults>() {
+            firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr)
+                    .addOnCompleteListener(CreateStudentAccount.this, new onCompleteListener<AuthResult>(){
                 @Override
-                public void onComplete(@NonNull task<AuthResults> task) {
+                public void onComplete(Task<AuthResult> task){
                     if(task.isSuccessful()){
-                        Toast.makeText(CreateStudentAccount.this, "Registed Successfully", toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(CreateStudentAccount.this, "Registed Successfully", Toast.LENGTH_SHORT).show();
+                        finish();
+                        Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);
+                        startActivity(i);
                     }
                     else{
-                        Toast.makeText(CreateStudentAccount.this, "Registed Unsuccessfully, try again", toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateStudentAccount.this, "Registed Unsuccessfully, try again", Toast.LENGTH_SHORT).show();
                     }
                 }
-            })
+            });
             Intent i = new Intent(CreateStudentAccount.this, StudentHomepage.class);
             startActivity(i);
         }

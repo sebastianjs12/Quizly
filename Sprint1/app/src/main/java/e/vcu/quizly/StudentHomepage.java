@@ -10,10 +10,13 @@ import android.view.View;
  */
 
 public class StudentHomepage extends Activity{
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_homepage);
+        firebaseAuth = FirebaseAuth.getInstance();
+
     }
 
     //Back To Login

@@ -11,17 +11,20 @@ import android.widget.EditText;
  */
 
 public class PostQuizCreation extends Activity {
-
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_quiz_creation);
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     public void clickHomeButton(View v) {
         if (v.getId() == R.id.teacher_home_but) {
             EditText dueDate =(EditText)findViewById(R.id.duedate);
             String dueDateStr = dueDate.getText().toString();
+            //Store dueDate
+
             Intent i = new Intent(PostQuizCreation.this, TeacherHomepage.class);
             startActivity(i);
         }

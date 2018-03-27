@@ -10,12 +10,14 @@ import android.widget.EditText;
  * Created by Max Vandenesse on 3/26/2018.
  */
 
-public class StudentAddQuiz extends Activity {
 
+public class StudentAddQuiz extends Activity {
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_add_quiz);
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     //Add Quiz
@@ -24,6 +26,7 @@ public class StudentAddQuiz extends Activity {
             //gather username and password and store to strings
             EditText ID =(EditText)findViewById(R.id.QuizIdInput);
             String IDStr = ID.getText().toString();
+            //Checks data in firebase for Quizid
 
             Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
             startActivity(i);

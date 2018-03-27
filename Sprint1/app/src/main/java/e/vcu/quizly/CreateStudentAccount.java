@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
@@ -39,7 +40,7 @@ public class CreateStudentAccount extends Activity {
             EditText pw =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = pw.getText().toString();
             firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr)
-                    .addOnCompleteListener(CreateStudentAccount.this, new onCompleteListener<AuthResult>(){
+                    .addOnCompleteListener(CreateStudentAccount.this, new OnCompleteListener<AuthResult>(){
                 @Override
                 public void onComplete(Task<AuthResult> task){
                     if(task.isSuccessful()){

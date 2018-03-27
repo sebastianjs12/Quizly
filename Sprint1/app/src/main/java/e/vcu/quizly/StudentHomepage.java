@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 /**
  * Created by Max Vandenesse on 3/26/2018.
  */
 
 public class StudentHomepage extends Activity{
-    FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

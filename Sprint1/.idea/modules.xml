@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Sprint1.iml" filepath="$PROJECT_DIR$/Sprint1.iml" />
+      <module fileurl="file://C:\Users\Maxx Vandenesse\Desktop\Group_Project\Quizly\Sprint1\Sprint1.iml" filepath="C:\Users\Maxx Vandenesse\Desktop\Group_Project\Quizly\Sprint1\Sprint1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Maxx Vandenesse\Desktop\Group_Project\Quizly\Sprint1\app\app.iml" filepath="C:\Users\Maxx Vandenesse\Desktop\Group_Project\Quizly\Sprint1\app\app.iml" />
     </modules>
   </component>
 </project>

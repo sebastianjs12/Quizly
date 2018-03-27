@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Cerate Account"
+        android:text="Cerate Teacher Account"
         android:textSize="30sp" />
 
     <TextView

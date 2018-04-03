@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/Sprint1/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/Sprint1/app/src/main/gen" />
+      <root url="file://$PROJECT_DIR$/Sprint1/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Sprint1/app/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

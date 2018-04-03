@@ -14,8 +14,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+
 
 /**
  * Created by Max Vandenesse on 3/22/2018.
@@ -63,6 +67,7 @@ public class CreateStudentAccount extends Activity {
 
             progressBar.setVisibility(View.VISIBLE);
             firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr)
+
                     .addOnCompleteListener(CreateStudentAccount.this, new OnCompleteListener<AuthResult>(){
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task){
@@ -70,6 +75,8 @@ public class CreateStudentAccount extends Activity {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(CreateStudentAccount.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                         finish();
+
+                        UserProfileChangeRequest setUserType = new UserProfileChangeRequest.Builder().setDisplayName("student").build();
                         Intent i = new Intent(CreateStudentAccount.this, StudentLogin.class);
                         startActivity(i);
                     }

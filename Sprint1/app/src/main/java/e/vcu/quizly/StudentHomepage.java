@@ -30,7 +30,7 @@ public class StudentHomepage extends Activity{
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         textViewStudentEmail = (TextView) findViewById(R.id.textViewStudentEmail);
-        textViewStudentEmail.setText("Welcome " + user.getEmail());
+        textViewStudentEmail.setText("Welcome " + user.getDisplayName());
 
     }
 

@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 public class StudentLogin extends Activity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+
     String usernameStr;
     String passwordStr;
     @Override

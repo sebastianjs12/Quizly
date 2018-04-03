@@ -39,7 +39,7 @@ public class TeacherHomepage extends Activity{
     //Create Quiz
     public void clickCreateQuiz(View v) {
         if (v.getId() == R.id.CreateQuiz) {
-            Intent i = new Intent(TeacherHomepage.this, TeacherCreateQuiz.class);
+            Intent i = new Intent(TeacherHomepage.this, PostQuizCreation.class);
             startActivity(i);
         }
     }

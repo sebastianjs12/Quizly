@@ -50,9 +50,9 @@ public class TeacherCreateQuiz extends Activity {
             startActivity(i);
         }
     }
-    public void clickCreateQuiz(View v) {
-        if (v.getId() == R.id.createQuiz) {
-            Intent i = new Intent(TeacherCreateQuiz.this, PostQuizCreation.class);
+    public void clickFinishQuiz(View v) {
+        if (v.getId() == R.id.finishQuiz) {
+            Intent i = new Intent(TeacherCreateQuiz.this, TeacherHomepage.class);
             startActivity(i);
         }
     }

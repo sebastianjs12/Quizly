@@ -14,8 +14,8 @@ public class Quiz {
     private LinkedList<Question> quiz;
     private String[][] grades;
     public Quiz(){
-        setQuizID();
-        teacher=null;
+        quizID="";
+        teacher="";
         dueDate=0;
         quiz=new LinkedList<>();
         grades=new String[2][1000];
@@ -44,22 +44,25 @@ public class Quiz {
     }
     public void setQuizID(){
         String alphabet ="abcdefghijklmnopqrstuvqxyz";
-        int index=0;
         String temp="";
-        for(int i=0;i<8;i++) {
+        int index=0;
+        for(int i=0;i<6;i++) {
             Random rand = new Random();
             quizID = quizID+Integer.toString(rand.nextInt(10));
         }
         Random rand = new Random();
-        index=rand.nextInt(27);
+        index=rand.nextInt(26);
         temp=alphabet.substring(index,index+1);
         rand = new Random();
-        index=rand.nextInt(27);
-        quizID=quizID.substring(0,index)+temp+quizID.substring(index+1,quizID.length());
+        index=rand.nextInt(6);
+        quizID=quizID.substring(0,index)+temp+ quizID.substring(index+1, quizID.length());
         rand = new Random();
-        index=rand.nextInt(27);
+        index=rand.nextInt(26);
         temp=alphabet.substring(index,index+1);
-        quizID=quizID.substring(0,index)+temp+quizID.substring(index+1,quizID.length());
+        rand = new Random();
+        index=rand.nextInt(7);
+        quizID=quizID.substring(0,index)+temp+ quizID.substring(index+1, quizID.length());
+
     }
     public String getQuizID(){
         return quizID;

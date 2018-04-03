@@ -43,6 +43,25 @@ public class TeacherCreateQuiz extends Activity {
             String choice3Str = choice3.getText().toString();
             EditText choice4 =(EditText)findViewById(R.id.answerfour);
             String choice4Str = choice4.getText().toString();
+            EditText correctTextEdit =(EditText)findViewById(R.id.correctAnswerText);
+            String correct = correctTextEdit.getText().toString();
+
+            char character = correct.charAt(0);
+            Question q = new Question();
+
+            q.setQuestion(questionStr);
+            q.setAnswerChoiceA(choice1Str);
+            q.setAnswerChoiceB(choice2Str);
+            q.setAnswerChoiceC(choice3Str);
+            q.setAnswerChoiceD(choice4Str);
+            switch(character) {
+                case 'a' & 'A' : q.setCorrectAnswer(choice1Str); break;
+                case 'b' & 'B' : q.setCorrectAnswer(choice2Str); break;
+                case 'c' & 'C' : q.setCorrectAnswer(choice3Str); break;
+                case 'd' & 'D' : q.setCorrectAnswer(choice4Str); break;
+                default : q.setCorrectAnswer(choice1Str); break; }
+
+
             //Send to database
             //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
             //Whats the correct answer to this question?

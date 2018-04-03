@@ -18,14 +18,12 @@ import com.google.firebase.database.ValueEventListener;
  */
 
 public class TeacherCreateQuiz extends Activity {
-    private static FirebaseDatabase fb;
-    private static FirebaseAuth firebaseAuth;
-    public Quiz quiz = new Quiz();
+    Quiz quiz = new Quiz();
+    Question curQ=new Question();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_create_quiz);
-        firebaseAuth= FirebaseAuth.getInstance();
     }
 
 
@@ -49,6 +47,15 @@ public class TeacherCreateQuiz extends Activity {
             EditText correctTextEdit =(EditText)findViewById(R.id.correctTextEdit);
             String correct = correctTextEdit.getText().toString();
 
+            quiz=PostQuizCreation.getQuiz();
+            curQ.setQuestion(questionStr);
+            curQ.setAnswerChoiceA(choice1Str);
+            curQ.setAnswerChoiceB(choice2Str);
+            curQ.setAnswerChoiceC(choice3Str);
+            curQ.setAnswerChoiceD(choice4Str);
+
+            /*
+
             char character = correct.charAt(0);
             Question q = new Question();
 
@@ -68,6 +75,7 @@ public class TeacherCreateQuiz extends Activity {
             //Send to database
             //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
             //Whats the correct answer to this question?
+            */
             Intent i = new Intent(TeacherCreateQuiz.this, TeacherCreateQuiz.class);
             startActivity(i);
         }

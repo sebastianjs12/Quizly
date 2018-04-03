@@ -43,18 +43,23 @@ public class Quiz {
         return grade;
     }
     public void setQuizID(){
-        char alpha1;
-        char alpha2;
-        char alpha3;
+        String alphabet ="abcdefghijklmnopqrstuvqxyz";
+        int index=0;
+        String temp="";
         for(int i=0;i<8;i++) {
             Random rand = new Random();
             quizID = quizID+Integer.toString(rand.nextInt(10));
         }
         Random rand = new Random();
-        alpha1=(char)(rand.nextInt(25)+65);
-        alpha2=(char)(rand.nextInt(25)+65);
-        alpha3=(char)(rand.nextInt(25)+65);
-        quizID=alpha1+alpha2+alpha3+quizID;
+        index=rand.nextInt(27);
+        temp=alphabet.substring(index,index+1);
+        rand = new Random();
+        index=rand.nextInt(27);
+        quizID=quizID.substring(0,index)+temp+quizID.substring(index+1,quizID.length());
+        rand = new Random();
+        index=rand.nextInt(27);
+        temp=alphabet.substring(index,index+1);
+        quizID=quizID.substring(0,index)+temp+quizID.substring(index+1,quizID.length());
     }
     public String getQuizID(){
         return quizID;

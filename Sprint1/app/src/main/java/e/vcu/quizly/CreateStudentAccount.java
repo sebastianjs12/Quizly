@@ -24,7 +24,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 /**
  * Created by Max Vandenesse on 3/22/2018.
  */
-
+//Just a comment
 public class CreateStudentAccount extends Activity {
     private FirebaseAuth firebaseAuth;
     private ProgressBar progressBar;

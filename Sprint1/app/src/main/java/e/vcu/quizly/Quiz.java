@@ -1,20 +1,20 @@
 package e.vcu.quizly;
 
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Max Vandenesse on 4/3/2018.
  */
 
 public class Quiz {
-    private int quizID;
+    private String quizID;
     private String teacher;
     private int dueDate;
     private LinkedList<Question> quiz;
     private String[][] grades;
     public Quiz(){
-        quizID=0;
+        quizID=null;
         teacher=null;
         dueDate=12311999;
         quiz=new LinkedList<>();
@@ -41,5 +41,22 @@ public class Quiz {
             }
         }
         return grade;
+    }
+    public void setQuizID(){
+        char alpha1;
+        char alpha2;
+        char alpha3;
+        for(int i=0;i<8;i++) {
+            Random rand = new Random();
+            quizID = quizID+Integer.toString(rand.nextInt(10));
+        }
+        Random rand = new Random();
+        alpha1=(char)(rand.nextInt(25)+65);
+        alpha2=(char)(rand.nextInt(25)+65);
+        alpha3=(char)(rand.nextInt(25)+65);
+        quizID=alpha1+alpha2+alpha3+quizID;
+    }
+    public String getQuizID(){
+        return quizID;
     }
 }

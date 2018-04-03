@@ -13,9 +13,17 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/quizID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Due Date" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Due Date (DDMMYYYY)" />
 
     <EditText
         android:id="@+id/duedate"
@@ -25,7 +33,7 @@
         android:inputType="date" />
 
     <Button
-        android:id="@+id/teacher_add_question"
+        android:id="@+id/teacher_add_questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickAddQuestion"

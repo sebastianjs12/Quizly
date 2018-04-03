@@ -21,8 +21,7 @@ public class TeacherCreateQuiz extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-         setContentView(R.layout.teacher_create_quiz);
+        setContentView(R.layout.teacher_create_quiz);
     }
 
 
@@ -43,7 +42,7 @@ public class TeacherCreateQuiz extends Activity {
             String choice3Str = choice3.getText().toString();
             EditText choice4 =(EditText)findViewById(R.id.answerfour);
             String choice4Str = choice4.getText().toString();
-            EditText correctTextEdit =(EditText)findViewById(R.id.correctAnswerText);
+            EditText correctTextEdit =(EditText)findViewById(R.id.correctTextEdit);
             String correct = correctTextEdit.getText().toString();
 
             char character = correct.charAt(0);
@@ -60,8 +59,6 @@ public class TeacherCreateQuiz extends Activity {
                 case 'c' & 'C' : q.setCorrectAnswer(choice3Str); break;
                 case 'd' & 'D' : q.setCorrectAnswer(choice4Str); break;
                 default : q.setCorrectAnswer(choice1Str); break; }
-
-
             //Send to database
             //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
             //Whats the correct answer to this question?

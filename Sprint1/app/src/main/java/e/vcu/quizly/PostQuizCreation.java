@@ -19,10 +19,10 @@ public class PostQuizCreation extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_quiz_creation);
         firebaseAuth = FirebaseAuth.getInstance();
-    }
 
-    public void clickAddQuestion(View v) {
-        if (v.getId() == R.id.teacher_add_question) {
+    }
+    public void clickAddQuestions(View v) {
+        if (v.getId() == R.id.teacher_add_questions) {
             EditText dueDate =(EditText)findViewById(R.id.duedate);
             String dueDateStr = dueDate.getText().toString();
             //Store dueDate
@@ -31,13 +31,11 @@ public class PostQuizCreation extends Activity {
             startActivity(i);
         }
     }
-
     public void clickBackButton(View v) {
         if (v.getId() == R.id.teacher_home_but) {
             EditText dueDate =(EditText)findViewById(R.id.duedate);
             String dueDateStr = dueDate.getText().toString();
             //Store dueDate
-
             Intent i = new Intent(PostQuizCreation.this, TeacherHomepage.class);
             startActivity(i);
         }

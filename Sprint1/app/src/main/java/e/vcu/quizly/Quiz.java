@@ -32,5 +32,14 @@ public class Quiz {
             }
         }
     }
-    
+    public int getGrade(String username){
+        int grade=0;
+        for(int i=0;i<1000;i++){
+            if(grades[i][0].equals(username)){
+                grade=Integer.parseInt(grades[i][1]);
+                break;
+            }
+        }
+        return grade;
+    }
 }

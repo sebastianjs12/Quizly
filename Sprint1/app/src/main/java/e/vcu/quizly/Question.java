@@ -5,14 +5,23 @@ package e.vcu.quizly;
  */
 
 public class Question {
-    private String question=null;
+    private String question;
     private String answerChoiceA=null;
     private String answerChoiceB=null;
     private String answerChoiceC=null;
     private String answerChoiceD=null;
     private String correctAnswer=null;
+    private int count;
+    private int correct;
     public Question(){
-
+        question=null;
+        answerChoiceA=null;
+        answerChoiceB=null;
+        answerChoiceC=null;
+        answerChoiceD=null;
+        correctAnswer=null;
+        count=0;
+        correct=0;
     }
     public void setQuestion(String question){
         this.question=question;
@@ -49,5 +58,14 @@ public class Question {
     }
     public String getCorrectAnswer(){
         return correctAnswer;
+    }
+    public void incrementQuestionCounter(){
+        count++;
+    }
+    public void incrementCorrect(){
+        correct++;
+    }
+    public int returnQuestionAnalytics(){
+        return correct/count;
     }
 }

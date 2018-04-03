@@ -7,33 +7,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * Created by Max Vandenesse on 3/26/2018.
  */
 
 public class TeacherCreateQuiz extends Activity {
-
+    private static FirebaseDatabase fb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DatabaseReference nRootRef = FirebaseDatabase.getInstance().getReference();
-
 
          setContentView(R.layout.teacher_create_quiz);
     }
 
-    // Adds a question to the quiz
 
+
+
+
+
+    // Adds a question to the quiz
     public void clickAddQuestion(View v) {
         if (v.getId() == R.id.addQuestion) {
             EditText question =(EditText)findViewById(R.id.editText2);

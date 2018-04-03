@@ -16,7 +16,7 @@ public class Quiz {
     public Quiz(){
         quizID=null;
         teacher=null;
-        dueDate=12311999;
+        dueDate=0;
         quiz=new LinkedList<>();
         grades=new String[2][1000];
     }
@@ -58,5 +58,11 @@ public class Quiz {
     }
     public String getQuizID(){
         return quizID;
+    }
+    public void setDueDate(int dueDate){
+        this.dueDate=dueDate;
+    }
+    public int getDueDate(){
+        return dueDate;
     }
 }

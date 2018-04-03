@@ -43,7 +43,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Answer Choice 3" />
+        android:text="Answer Choice Three" />
 
     <EditText
         android:id="@+id/answerthree"
@@ -55,10 +55,23 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Answer Choice 4" />
+        android:text="Answer Choice Four" />
 
     <EditText
         android:id="@+id/answerfour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/correctAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correct Answer" />
+
+    <EditText
+        android:id="@+id/correctAnswerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -72,11 +85,11 @@
         android:text="Add Question" />
 
     <Button
-        android:id="@+id/createQuiz"
+        android:id="@+id/finishQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickCreateQuiz"
-        android:text="Create Quiz" />
+        android:onClick="clickFinishQuiz"
+        android:text="Finish" />
 
     <Button
         android:id="@+id/cancel"

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -18,10 +19,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class TeacherCreateQuiz extends Activity {
     private static FirebaseDatabase fb;
+    private static FirebaseAuth firebaseAuth;
+    public Quiz quiz = new Quiz();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_create_quiz);
+        firebaseAuth= FirebaseAuth.getInstance();
     }
 
 
@@ -58,7 +62,9 @@ public class TeacherCreateQuiz extends Activity {
                 case 'b' & 'B' : q.setCorrectAnswer(choice2Str); break;
                 case 'c' & 'C' : q.setCorrectAnswer(choice3Str); break;
                 case 'd' & 'D' : q.setCorrectAnswer(choice4Str); break;
-                default : q.setCorrectAnswer(choice1Str); break; }
+                default : q.setCorrectAnswer(choice1Str); break;}
+            quiz.addQuestion(q);
+            quiz.setTeacher(firebaseAuth.getCurrentUser().getEmail());
             //Send to database
             //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
             //Whats the correct answer to this question?
@@ -79,7 +85,7 @@ public class TeacherCreateQuiz extends Activity {
         }
     }
     //Creates a json objects and pushes it to the database
-    public void sendToDatabase(String question, String choice1, String choice2, String choice3, String choice4){
+    //public void sendToDatabase(String question, String choice1, String choice2, String choice3, String choice4){
         //JSONobj json = New JSONobj;
-    }
+    //}
 }

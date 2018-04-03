@@ -14,7 +14,7 @@ public class Quiz {
     private LinkedList<Question> quiz;
     private String[][] grades;
     public Quiz(){
-        quizID=null;
+        setQuizID();
         teacher=null;
         dueDate=0;
         quiz=new LinkedList<>();
@@ -65,4 +65,6 @@ public class Quiz {
     public int getDueDate(){
         return dueDate;
     }
+    public void setTeacher(String teach){this.teacher = teach;}
+    public String getTeacher(){return this.teacher;}
 }

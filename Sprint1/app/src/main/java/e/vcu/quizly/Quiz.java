@@ -75,4 +75,8 @@ public class Quiz {
     }
     public void setTeacher(String teach){this.teacher = teach;}
     public String getTeacher(){return this.teacher;}
+
+    public LinkedList<Question> getQuiz(){
+        return quiz;
+    }
 }

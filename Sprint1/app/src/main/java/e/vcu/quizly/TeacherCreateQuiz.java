@@ -53,7 +53,17 @@ public class TeacherCreateQuiz extends Activity {
             curQ.setAnswerChoiceB(choice2Str);
             curQ.setAnswerChoiceC(choice3Str);
             curQ.setAnswerChoiceD(choice4Str);
+            curQ.setCorrectAnswer(correct);
+            quiz.addQuestion(curQ);
 
+            for(Question q:quiz.getQuiz()) {
+                System.out.println(q.getQuestion());
+                System.out.println(q.getAnswerChoiceA());
+                System.out.println(q.getAnswerChoiceB());
+                System.out.println(q.getAnswerChoiceC());
+                System.out.println(q.getAnswerChoiceD());
+                System.out.println(q.getCorrectAnswer());
+            }
             /*
 
             char character = correct.charAt(0);

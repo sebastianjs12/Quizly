@@ -36,7 +36,7 @@
         android:id="@+id/teacher_add_questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickAddQuestion"
+        android:onClick="clickAddQuestions"
         android:text="Add Questions" />
 
     <Button

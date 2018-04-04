@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/selectQuizText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Quiz"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/quizOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quiz Analytics" />
+
+    <Button
+        android:id="@+id/quizTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Quiz" />
+
+    <Button
+        android:id="@+id/teacherBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBackToHomepage"
+        android:text="Back" />
+
+</LinearLayout>

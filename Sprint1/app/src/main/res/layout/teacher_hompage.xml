@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Homepage"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/teacherManage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickTeacherManage"
+        android:text="Manage" />
+
+    <Button
+        android:id="@+id/CreateQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickCreateQuiz"
+        android:text="Create Quiz" />
+
+    <Button
+        android:id="@+id/teacherLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickLogout"
+        android:text="Logout" />
+</LinearLayout>

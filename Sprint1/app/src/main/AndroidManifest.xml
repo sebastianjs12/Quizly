@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="e.vcu.quizly" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TeacherLogin" ></activity>
+        <activity android:name=".StudentLogin" ></activity>
+        <activity android:name=".CreateStudentAccount" ></activity>
+        <activity android:name=".CreateTeacherAccount" ></activity>
+        <activity android:name=".PostQuizCreation" ></activity>
+        <activity android:name=".StudentAddQuiz" ></activity>
+        <activity android:name=".StudentQuestionTemp" ></activity>
+        <activity android:name=".StudentQuizSubmission" ></activity>
+        <activity android:name=".TeacherCreateQuiz" ></activity>
+        <activity android:name=".TeacherHomepage" ></activity>
+        <activity android:name=".StudentHomepage" ></activity>
+        <activity android:name=".TeacherManage" ></activity>
+        <activity android:name=".TeacherQuizAnalytics" ></activity>
+        <activity android:name=".TeacherQuizEdit" ></activity>
+    </application>
+
+</manifest>

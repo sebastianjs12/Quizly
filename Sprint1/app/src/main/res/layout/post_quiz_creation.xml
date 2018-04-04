@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quiz ID: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/quizID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Due Date (DDMMYYYY)" />
+
+    <EditText
+        android:id="@+id/duedate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/teacher_add_questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickAddQuestions"
+        android:text="Add Questions" />
+
+    <Button
+        android:id="@+id/teacher_home_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBackButton"
+        android:text="Back" />
+</LinearLayout>

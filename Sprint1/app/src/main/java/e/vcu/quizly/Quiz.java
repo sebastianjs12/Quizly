@@ -8,6 +8,7 @@ import java.util.Random;
  */
 
 public class Quiz {
+    int qNum=-1;
     private String quizID;
     private String teacher;
     private int dueDate;
@@ -78,5 +79,26 @@ public class Quiz {
 
     public LinkedList<Question> getQuiz(){
         return quiz;
+    }
+    public Question getNextQuestion(){
+        qNum++;
+        if(qNum==quiz.size()||qNum<0)
+            return null;
+        else
+            return quiz.get(qNum);
+    }
+    public Question getPrevQuestion(){
+        qNum--;
+        if(qNum==quiz.size()||qNum<0)
+            return null;
+        else
+            return quiz.get(qNum);
+    }
+    public Question getFirstQuestion(){
+        qNum=0;
+        if(qNum==quiz.size()||qNum<0)
+            return null;
+        else
+            return quiz.get(qNum);
     }
 }

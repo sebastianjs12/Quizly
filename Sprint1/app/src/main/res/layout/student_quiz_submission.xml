@@ -13,16 +13,10 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/grade"
+        android:id="@+id/view1Grade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Grade:"
         android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/viewGrade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/exit"

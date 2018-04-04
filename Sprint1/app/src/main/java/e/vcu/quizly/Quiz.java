@@ -28,7 +28,7 @@ public class Quiz {
     }
 
     public void setGrade(String username){
-        double grade=correct/questionCounter;
+        double grade=(correct*100)/questionCounter;
         for(int i=0;i<1000;i++){
             if(grades[i][0]==null){
                 grades[i][0]=username;
@@ -111,6 +111,9 @@ public class Quiz {
     }
     public void questionCounter(){
         questionCounter++;
+    }
+    public int returnGrade(){
+        return (correct/questionCounter);
     }
 
 }

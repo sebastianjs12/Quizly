@@ -69,53 +69,39 @@ public class StudentQuestionTemp extends Activity {
                         Toast temp3 = Toast.makeText(getApplicationContext(), "Please select an answer choice", Toast.LENGTH_SHORT);
                         temp3.show();
                     } else if (radioId == rb1.getId()) { // Answer choice A is selected (2131165194)
-                        System.out.println("Selected answer choice A");
                         radioButton = findViewById(radioId); // Finds the radio button that was selected
                         studentAnswers.add((String) rb1.getText()); // Stores selected answer in ArrayList
 
                         //check if answer is correct and record grade
                         if(rb1.getText().equals(q.getCorrectAnswer()))
                             quiz.incrementCorrect();
-
-
-                        System.out.println("***************"+rb1.getText()); // Outputs choice to console
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class); // Goes to next question
                         startActivity(i);
                     } else if (radioId == rb2.getId()) { // Answer choice B is selected (2131165230)
-                        System.out.println("Selected answer choice B");
                         radioButton = findViewById(radioId);
                         studentAnswers.add((String) rb2.getText());
 
                         //check if answer is correct and record grade
                         if(rb2.getText().equals(q.getCorrectAnswer()))
                             quiz.incrementCorrect();
-
-
-                        System.out.println("***************"+rb2.getText()); // Outputs choice to console
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);
                         startActivity(i);
                     } else if (radioId == rb3.getId()) { // Answer choice C is selected (2131165236)
-                        System.out.println("Selected answer choice C");
                         radioButton = findViewById(radioId);
                         studentAnswers.add((String) rb3.getText());
 
                         //check if answer is correct and record grade
                         if(rb3.getText().equals(q.getCorrectAnswer()))
                             quiz.incrementCorrect();
-
-                        System.out.println("***************"+rb3.getText()); // Outputs choice to console
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);
                         startActivity(i);
                     } else {// Answer choice D is selected (2131165248)
-                        System.out.println("Selected answer choice D");
                         radioButton = findViewById(radioId);
                         studentAnswers.add((String) rb4.getText());
 
                         //check if answer is correct and record grade
                         if(rb4.getText().equals(q.getCorrectAnswer()))
                             quiz.incrementCorrect();
-
-                        System.out.println("***************"+rb4.getText()); // Outputs choice to console
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);
                         startActivity(i);
                     }

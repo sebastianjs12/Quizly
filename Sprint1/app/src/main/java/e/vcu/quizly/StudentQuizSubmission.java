@@ -25,10 +25,9 @@ public class StudentQuizSubmission extends Activity{
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
         quiz.setGrade(user.getEmail());
-        System.out.println(user.getEmail());
-        viewGrade = (TextView) findViewById(R.id.viewGrade);
-        //System.out.println("Grade***********"+quiz.getGrade(user.getEmail()));
-        //viewGrade.setText();
+        viewGrade = (TextView) findViewById(R.id.view1Grade);
+        String output=Integer.toString(quiz.getGrade(user.getEmail()));
+        viewGrade.setText("Grade: "+output);
 
     }
     public void clickExit(View v) {

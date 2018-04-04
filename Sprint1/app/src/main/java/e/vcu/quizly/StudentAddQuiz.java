@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Max Vandenesse on 3/26/2018.
  */
@@ -16,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class StudentAddQuiz extends Activity {
     FirebaseAuth firebaseAuth;
-    static CreateQuiz newQuiz=new CreateQuiz();
+
     Quiz quiz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,28 +28,35 @@ public class StudentAddQuiz extends Activity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         //test input
-        newQuiz.build();
-        quiz = newQuiz.getQuiz();
+        //newQuiz.build();
+        quiz = CreateQuiz.getQuiz();
 
     }
 
     //Add Quiz
     public void clickAddQuiz(View v) {
         if (v.getId() == R.id.addQuiz) {
-
+            System.out.println(quiz.getQuizID()+"*******************");
             //gather username and password and store to strings
             EditText ID =(EditText)findViewById(R.id.QuizIdInput);
             String IDStr = ID.getText().toString();
             //print quiz ID
-            System.out.println("******QUIZ ID******"+quiz.getQuizID());
             if(!IDStr.equals(quiz.getQuizID())){
                 Toast.makeText(this, "This quiz does not exist! Please enter a Quiz ID",
                         Toast.LENGTH_SHORT).show();
             }
             //Checks data in firebase for Quizid
             else {
-                Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
-                startActivity(i);
+                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+                if(new Date().after(quiz.getDueDate())){
+                    Toast.makeText(this, "This quiz has closed!",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
+                    startActivity(i);
+                }
             }
         }
     }

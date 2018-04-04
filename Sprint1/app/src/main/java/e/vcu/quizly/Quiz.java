@@ -1,5 +1,8 @@
 package e.vcu.quizly;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -8,9 +11,11 @@ import java.util.Random;
  */
 
 public class Quiz {
-    int qNum=-1;
-    int correct=0;
-    int questionCounter=0;
+    private SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
+    private Date due;
+    private int qNum=-1;
+    private int correct=0;
+    private int  questionCounter=0;
     private String quizID;
     private String teacher;
     private int dueDate;
@@ -21,18 +26,18 @@ public class Quiz {
         teacher="";
         dueDate=0;
         quiz=new LinkedList<>();
-        grades=new String[2][1000];
+        grades=new String[1000][2];
     }
     public void addQuestion(Question question){
         quiz.add(question);
     }
 
-    public void setGrade(String username){
-        double grade=(correct*100)/questionCounter;
+    public void setGrade(String username,int grade){
+        //grade will be added to a null location or overwrite previous grade
         for(int i=0;i<1000;i++){
-            if(grades[i][0]==null){
+            if(grades[i][0]==null||grades[i][0].equals(username)){
                 grades[i][0]=username;
-                grades[i][1]=Integer.toString((int)grade);
+                grades[i][1]=Integer.toString(grade);
                 break;
             }
         }
@@ -51,6 +56,7 @@ public class Quiz {
     public void setQuizID(){
         String alphabet ="abcdefghijklmnopqrstuvqxyz";
         String temp="";
+        quizID="";
         int index=0;
         for(int i=0;i<6;i++) {
             Random rand = new Random();
@@ -73,11 +79,11 @@ public class Quiz {
     public String getQuizID(){
         return quizID;
     }
-    public void setDueDate(int dueDate){
-        this.dueDate=dueDate;
+    public void setDueDate(String dueDate) throws ParseException {
+        this.due=SDF.parse(dueDate);
     }
-    public int getDueDate(){
-        return dueDate;
+    public Date getDueDate(){
+        return due;
     }
     public void setTeacher(String teach){this.teacher = teach;}
     public String getTeacher(){return this.teacher;}
@@ -112,8 +118,26 @@ public class Quiz {
     public void questionCounter(){
         questionCounter++;
     }
-    public int returnGrade(){
-        return (correct/questionCounter);
+    public String getAllGrades(){
+        String output="";
+        for(int i=0;i<1000;i++){
+            if(grades[i][0]!=null){
+                output=output+grades[i][0]+"  "+grades[i][1]+"\n";
+            }
+        }
+        return output;
     }
+    public void quizReset(){
+        qNum=-1;
+        correct=0;
+        questionCounter=0;
+    }
+
+    //TESTING
+    public int setInternalGrade(){
+        double grade=(correct*100)/questionCounter;
+        return (int)grade;
+    }
+
 
 }

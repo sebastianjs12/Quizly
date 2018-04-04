@@ -8,7 +8,7 @@
         android:id="@+id/quizNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz 1"
+        android:text="Quiz Analytics"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -17,5 +17,39 @@
         android:id="@+id/questionResults"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Enter Quiz ID" />
+
+    <EditText
+        android:id="@+id/teacherQID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Grades"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/grades"
+        android:layout_width="match_parent"
+        android:layout_height="278dp" />
+
+    <Button
+        android:id="@+id/quizGrades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickGrades"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/teacherBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickTeacherBack"
+        android:text="Back" />
 </LinearLayout>

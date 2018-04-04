@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="clickAnalytics"
     android:orientation="vertical">
 
     <TextView
@@ -14,9 +15,10 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/quizOne"
+        android:id="@+id/teacherAnalytics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickGrades"
         android:text="Quiz Analytics" />
 
     <Button

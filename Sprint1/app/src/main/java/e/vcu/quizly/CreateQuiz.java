@@ -1,6 +1,8 @@
 package e.vcu.quizly;
 
 
+import java.text.ParseException;
+
 //This class will create and populate a quiz object with Question objects.
 //from the class call
 // CreateQuiz newQuiz=new CreateQuiz();
@@ -12,12 +14,13 @@ public class CreateQuiz {
     static Quiz newQuiz;
 
     public CreateQuiz(){
-    }
-    public void build(){
         newQuiz=new Quiz();
+    }
+    public void build() throws ParseException {
+
         newQuiz.setTeacher("Budwell");
         //newQuiz.setQuizID();
-        newQuiz.setDueDate(12311999);
+        //newQuiz.setDueDate("12/31/2018");
         //Populate Quiz
         for(int i=1;i<6;i++){
             Question q=new Question();
@@ -31,6 +34,10 @@ public class CreateQuiz {
             q.setCorrectAnswer(answerChoice+"1"+" question "+i);
             newQuiz.addQuestion(q);
         }
+    for(int i=1;i<16;i++){
+            newQuiz.setGrade("user "+i,80+i);
+        }
+
     }
     /*//TESTING
     public void printIT() {

@@ -24,7 +24,7 @@ public class StudentQuizSubmission extends Activity{
         setContentView(R.layout.student_quiz_submission);
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        quiz.setGrade(user.getEmail());
+        quiz.setGrade(user.getEmail(),quiz.setInternalGrade());
         viewGrade = (TextView) findViewById(R.id.view1Grade);
         String output=Integer.toString(quiz.getGrade(user.getEmail()));
         viewGrade.setText("Grade: "+output);
@@ -32,9 +32,11 @@ public class StudentQuizSubmission extends Activity{
     }
     public void clickExit(View v) {
         if (v.getId() == R.id.exit) {
+            quiz.quizReset();
             Intent i = new Intent(StudentQuizSubmission.this, StudentHomepage.class);
             startActivity(i);
         }
     }
+
 
 }

@@ -119,7 +119,7 @@ public class StudentQuestionTemp extends Activity {
         }
     }
 
-    //Next Question
+    //Next Question NEEDS TO SAVE ON FINISH CLICK!!!!!!!!!
     public void clickNext(View v) {
         if (v.getId() == R.id.nextQuestion) {
             Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);

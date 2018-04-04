@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -28,10 +29,15 @@ public class StudentAddQuiz extends Activity {
             //gather username and password and store to strings
             EditText ID =(EditText)findViewById(R.id.QuizIdInput);
             String IDStr = ID.getText().toString();
+            if(IDStr.equals("")){
+                Toast.makeText(this, "Please enter a Quiz ID",
+                        Toast.LENGTH_SHORT).show();
+            }
             //Checks data in firebase for Quizid
-
-            Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
-            startActivity(i);
+            else {
+                Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
+                startActivity(i);
+            }
         }
     }
     //Back To Homepage

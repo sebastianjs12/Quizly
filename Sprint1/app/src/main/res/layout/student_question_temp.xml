@@ -11,30 +11,44 @@
         android:text="This is a sample question"
         android:textAlignment="center"
         android:textSize="24sp" />
-
-    <RadioButton
-        android:id="@+id/AnswerChoice1"
-        android:layout_width="match_parent"
+    
+    <RadioGroup
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A" />
+        android:layout_centerInParent="true"
+        android:id="@+id/radioGroup">
 
-    <RadioButton
-        android:id="@+id/AnswerChoice2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="B" />
+        <RadioButton
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Answer Choice A" />
 
-    <RadioButton
-        android:id="@+id/AnswerChoice3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="C" />
+        <RadioButton
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Answer Choice B"
 
-    <RadioButton
-        android:id="@+id/AnswerChoice4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="D" />
+            />
+
+        <RadioButton
+            android:id="@+id/c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Answer Choice C" />
+
+        <RadioButton
+            android:id="@+id/d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Answer Choice D" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/nextQuestion"
@@ -42,5 +56,12 @@
         android:layout_height="wrap_content"
         android:onClick="clickNext"
         android:text="Next" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickExit"
+        android:text="Exit" />
 
 </LinearLayout>

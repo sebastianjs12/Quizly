@@ -13,6 +13,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Max Vandenesse on 3/26/2018.
  */
@@ -20,7 +23,14 @@ import com.google.firebase.database.ValueEventListener;
 public class TeacherCreateQuiz extends Activity {
     private static FirebaseDatabase fb;
     private static FirebaseAuth firebaseAuth;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref;
     public Quiz quiz = new Quiz();
+
+    public TeacherCreateQuiz() {
+        ref = database.getReference();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +75,21 @@ public class TeacherCreateQuiz extends Activity {
                 default : q.setCorrectAnswer(choice1Str); break;}
             quiz.addQuestion(q);
             quiz.setTeacher(firebaseAuth.getCurrentUser().getEmail());
+
+            DatabaseReference quizChild = ref.child("quizzes");
+            Map<String, Quiz> quizzes = new HashMap<>();
+            quizzes.put("key1", quiz);
+            quizChild.setValue(quizzes);
+            question.setText("");
+            choice1.setText("");
+            choice2.setText("");
+            choice3.setText("");
+            choice4.setText("");
+            correctTextEdit.setText("");
+
             //Send to database
             //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
             //Whats the correct answer to this question?
-            Intent i = new Intent(TeacherCreateQuiz.this, TeacherCreateQuiz.class);
-            startActivity(i);
         }
     }
     public void clickFinishQuiz(View v) {

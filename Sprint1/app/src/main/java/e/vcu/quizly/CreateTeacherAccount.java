@@ -73,6 +73,7 @@ public class CreateTeacherAccount extends Activity {
                         startActivity(i);
                     }
                     else{
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(CreateTeacherAccount.this, "Registered Unsuccessfully, try again", Toast.LENGTH_SHORT).show();
                     }
                 }

@@ -68,7 +68,7 @@
         android:id="@+id/correctAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Correct Answer" />
+        android:text="Correct Answer (Letter Only)" />
 
     <EditText
         android:id="@+id/correctTextEdit"

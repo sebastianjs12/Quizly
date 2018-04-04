@@ -9,13 +9,15 @@ import java.util.Random;
 
 public class Quiz {
     int qNum=-1;
+    int correct=0;
+    int questionCounter=0;
     private String quizID;
     private String teacher;
     private int dueDate;
     private LinkedList<Question> quiz;
     private String[][] grades;
     public Quiz(){
-        quizID="";
+        quizID="1234";
         teacher="";
         dueDate=0;
         quiz=new LinkedList<>();
@@ -24,17 +26,20 @@ public class Quiz {
     public void addQuestion(Question question){
         quiz.add(question);
     }
-    public void setGrade(String username,int grade){
+
+    public void setGrade(String username){
+        double grade=correct/questionCounter;
         for(int i=0;i<1000;i++){
-            if(grades[i][0].equals(null)){
+            if(grades[i][0]==null){
                 grades[i][0]=username;
-                grades[i][1]=Integer.toString(grade);
+                grades[i][1]=Integer.toString((int)grade);
                 break;
             }
         }
     }
     public int getGrade(String username){
         int grade=0;
+
         for(int i=0;i<1000;i++){
             if(grades[i][0].equals(username)){
                 grade=Integer.parseInt(grades[i][1]);
@@ -62,7 +67,7 @@ public class Quiz {
         temp=alphabet.substring(index,index+1);
         rand = new Random();
         index=rand.nextInt(7);
-        quizID=quizID.substring(0,index)+temp+ quizID.substring(index+1, quizID.length());
+        quizID=quizID.substring(0,index)+temp+ quizID.substring(index, quizID.length());
 
     }
     public String getQuizID(){
@@ -101,4 +106,11 @@ public class Quiz {
         else
             return quiz.get(qNum);
     }
+    public void incrementCorrect(){
+        correct++;
+    }
+    public void questionCounter(){
+        questionCounter++;
+    }
+
 }

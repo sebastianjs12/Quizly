@@ -16,7 +16,7 @@ public class CreateQuiz {
     public void build(){
         newQuiz=new Quiz();
         newQuiz.setTeacher("Budwell");
-        newQuiz.setQuizID();
+        //newQuiz.setQuizID();
         newQuiz.setDueDate(12311999);
         //Populate Quiz
         for(int i=1;i<6;i++){
@@ -24,11 +24,11 @@ public class CreateQuiz {
             String question="Question ";
             String answerChoice="Answerchoice ";
             q.setQuestion(question+Integer.toString(i));
-            q.setAnswerChoiceA(answerChoice+"1");
-            q.setAnswerChoiceB(answerChoice+"2");
-            q.setAnswerChoiceC(answerChoice+"3");
-            q.setAnswerChoiceD(answerChoice+"4");
-            q.setCorrectAnswer("1");
+            q.setAnswerChoiceA(answerChoice+"1"+" question "+i);
+            q.setAnswerChoiceB(answerChoice+"2"+" question "+i);
+            q.setAnswerChoiceC(answerChoice+"3"+" question "+i);
+            q.setAnswerChoiceD(answerChoice+"4"+" question "+i);
+            q.setCorrectAnswer(answerChoice+"1"+" question "+i);
             newQuiz.addQuestion(q);
         }
     }

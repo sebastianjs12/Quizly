@@ -16,21 +16,31 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class StudentAddQuiz extends Activity {
     FirebaseAuth firebaseAuth;
+    static CreateQuiz newQuiz=new CreateQuiz();
+    Quiz quiz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_add_quiz);
         firebaseAuth = FirebaseAuth.getInstance();
+
+        //test input
+        newQuiz.build();
+        quiz = newQuiz.getQuiz();
+
     }
 
     //Add Quiz
     public void clickAddQuiz(View v) {
         if (v.getId() == R.id.addQuiz) {
+
             //gather username and password and store to strings
             EditText ID =(EditText)findViewById(R.id.QuizIdInput);
             String IDStr = ID.getText().toString();
-            if(IDStr.equals("")){
-                Toast.makeText(this, "Please enter a Quiz ID",
+            //print quiz ID
+            System.out.println("******QUIZ ID******"+quiz.getQuizID());
+            if(!IDStr.equals(quiz.getQuizID())){
+                Toast.makeText(this, "This quiz does not exist! Please enter a Quiz ID",
                         Toast.LENGTH_SHORT).show();
             }
             //Checks data in firebase for Quizid

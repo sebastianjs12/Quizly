@@ -12,6 +12,11 @@
         android:text="Homepage"
         android:textSize="30sp" />
 
+    <TextView
+        android:id="@+id/studentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/StudentAddQuiz"
         android:layout_width="match_parent"
@@ -25,10 +30,4 @@
         android:onClick="clickLogout"
         android:text="Logout" />
 
-    <TextView
-        android:id="@+id/textViewStudentEmail"
-        android:layout_width="match_parent"
-        android:layout_height="73dp"
-        android:text="Welcome "
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 </LinearLayout>

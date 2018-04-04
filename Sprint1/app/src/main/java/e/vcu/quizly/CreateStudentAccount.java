@@ -56,12 +56,26 @@ public class CreateStudentAccount extends Activity {
             String usernameStr = us.getText().toString();
             EditText pw =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = pw.getText().toString();
+            EditText FN =(EditText)findViewById(R.id.studentFN);
+            String FNStr = FN.getText().toString();
+            EditText LN =(EditText)findViewById(R.id.studentLN);
+            String LNStr = LN.getText().toString();
+            final String fullName=FNStr+" "+LNStr;
+
             if(TextUtils.isEmpty(usernameStr)){
                 Toast.makeText(this, "Username is empty try again", Toast.LENGTH_LONG).show();
                 return;
             }
             if(TextUtils.isEmpty(passwordStr)){
                 Toast.makeText(this, "Password is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if(TextUtils.isEmpty(FNStr)){
+                Toast.makeText(this, "First name is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if(TextUtils.isEmpty(LNStr)){
+                Toast.makeText(this, "Last name is empty try again", Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -76,7 +90,12 @@ public class CreateStudentAccount extends Activity {
                         Toast.makeText(CreateStudentAccount.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                         finish();
 
-                        UserProfileChangeRequest setUserType = new UserProfileChangeRequest.Builder().setDisplayName("student").build();
+                        firebaseAuth = FirebaseAuth.getInstance();
+                        FirebaseUser user = firebaseAuth.getCurrentUser();
+                        UserProfileChangeRequest create = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(fullName)
+                                .build();
+                        user.updateProfile(create);
                         Intent i = new Intent(CreateStudentAccount.this, StudentLogin.class);
                         startActivity(i);
                     }

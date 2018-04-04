@@ -13,6 +13,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -50,6 +52,11 @@ public class CreateTeacherAccount extends Activity {
             String usernameStr = userName.getText().toString();
             EditText password =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = password.getText().toString();
+            EditText FN =(EditText)findViewById(R.id.teacherFN);
+            String FNStr = FN.getText().toString();
+            EditText LN =(EditText)findViewById(R.id.teacherLN);
+            String LNStr = LN.getText().toString();
+            final String fullName=FNStr+" "+LNStr;
             if(TextUtils.isEmpty(usernameStr)){
                 Toast.makeText(this, "Username is empty try again", Toast.LENGTH_LONG).show();
                 return;
@@ -58,17 +65,32 @@ public class CreateTeacherAccount extends Activity {
                 Toast.makeText(this, "Password is empty try again", Toast.LENGTH_LONG).show();
                 return;
             }
-
+            if(TextUtils.isEmpty(FNStr)){
+                Toast.makeText(this, "First name is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if(TextUtils.isEmpty(LNStr)){
+                Toast.makeText(this, "Last name is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
             progressBar.setVisibility(View.VISIBLE);
             firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr)
                     .addOnCompleteListener(CreateTeacherAccount.this, new OnCompleteListener<AuthResult>(){
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task){
+
                     if(task.isSuccessful()){
                         progressBar.setVisibility(View.GONE);
 
                         Toast.makeText(CreateTeacherAccount.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                         finish();
+                        firebaseAuth = FirebaseAuth.getInstance();
+                        FirebaseUser user = firebaseAuth.getCurrentUser();
+                        UserProfileChangeRequest create = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(fullName)
+                                .build();
+                        user.updateProfile(create);
+
                         Intent i = new Intent(CreateTeacherAccount.this, TeacherLogin.class);
                         startActivity(i);
                     }

@@ -22,15 +22,13 @@
             android:id="@+id/a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="Answer Choice A" />
+            android:onClick="checkButton" />
 
         <RadioButton
             android:id="@+id/b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="checkButton"
-            android:text="Answer Choice B"
 
             />
 
@@ -38,15 +36,13 @@
             android:id="@+id/c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="Answer Choice C" />
+            android:onClick="checkButton" />
 
         <RadioButton
             android:id="@+id/d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="Answer Choice D" />
+            android:onClick="checkButton" />
 
     </RadioGroup>
 

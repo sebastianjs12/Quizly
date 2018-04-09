@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "739959269230-tmlf0nq7jnqo71e4mn0t6kc1nau822g4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.vcu.quizly",
+            "certificate_hash": "a284fbe2286b31e96bb72e72f59ab4c3fb114218"
+          }
+        },
+        {
+          "client_id": "739959269230-09p2h0b6voefjq22hbf9647bjhul8ph5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.vcu.quizly",
+            "certificate_hash": "4c5c8c5c21e675ee5e62a38f791fb7654737d321"
+          }
+        },
+        {
           "client_id": "739959269230-22vh6hq8u23bkkfsnjbhcofpio5splj0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

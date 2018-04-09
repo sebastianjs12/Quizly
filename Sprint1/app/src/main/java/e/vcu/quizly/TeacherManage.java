@@ -16,8 +16,13 @@ public class TeacherManage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_manage);
     }
-
-    //Back To homepage
+    //quiz analytics
+    public void clickGrades(View v) {
+        if (v.getId() == R.id.teacherAnalytics) {
+            Intent i = new Intent(TeacherManage.this, TeacherQuizAnalytics.class);
+            startActivity(i);
+        }
+    }
     public void clickBackToHomepage(View v) {
         if (v.getId() == R.id.teacherBackButton) {
             Intent i = new Intent(TeacherManage.this, TeacherHomepage.class);

@@ -13,6 +13,11 @@
         android:text="Homepage"
         android:textSize="30sp" />
 
+    <TextView
+        android:id="@+id/teacherView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/teacherManage"
         android:layout_width="match_parent"

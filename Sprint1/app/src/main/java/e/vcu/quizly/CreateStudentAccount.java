@@ -56,6 +56,14 @@ public class CreateStudentAccount extends Activity {
             String usernameStr = us.getText().toString();
             EditText pw =(EditText)findViewById(R.id.teacherPasswordText);
             String passwordStr = pw.getText().toString();
+            //Get names
+            EditText FN =(EditText)findViewById(R.id.studentFN);
+            String FNStr = FN.getText().toString();
+            EditText LN =(EditText)findViewById(R.id.studentLN);
+            String LNStr = LN.getText().toString();
+            final String fullName=FNStr+" "+LNStr;
+
+            //if empty get new input
             if(TextUtils.isEmpty(usernameStr)){
                 Toast.makeText(this, "Username is empty try again", Toast.LENGTH_LONG).show();
                 return;
@@ -64,19 +72,38 @@ public class CreateStudentAccount extends Activity {
                 Toast.makeText(this, "Password is empty try again", Toast.LENGTH_LONG).show();
                 return;
             }
+            if(TextUtils.isEmpty(FNStr)){
+                Toast.makeText(this, "First name is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if(TextUtils.isEmpty(LNStr)){
+                Toast.makeText(this, "Last name is empty try again", Toast.LENGTH_LONG).show();
+                return;
+            }
 
+            //Shows progress bar
             progressBar.setVisibility(View.VISIBLE);
+            //Creates user
             firebaseAuth.createUserWithEmailAndPassword(usernameStr, passwordStr)
 
                     .addOnCompleteListener(CreateStudentAccount.this, new OnCompleteListener<AuthResult>(){
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task){
                     if(task.isSuccessful()){
+                        //progress bar goes away
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(CreateStudentAccount.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                         finish();
-
+                        //idk what happens here I think you did this max
                         UserProfileChangeRequest setUserType = new UserProfileChangeRequest.Builder().setDisplayName("student").build();
+                        //Get instance of the firebase for authorized users
+                        firebaseAuth = FirebaseAuth.getInstance();
+                        FirebaseUser user = firebaseAuth.getCurrentUser();
+                        UserProfileChangeRequest create = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(fullName)
+                                .build();
+                        user.updateProfile(create);
+
                         Intent i = new Intent(CreateStudentAccount.this, StudentLogin.class);
                         startActivity(i);
                     }

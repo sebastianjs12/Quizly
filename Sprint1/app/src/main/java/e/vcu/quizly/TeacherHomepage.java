@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import android.widget.TextView;
+
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by Max Vandenesse on 3/26/2018.
@@ -13,11 +16,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class TeacherHomepage extends Activity{
     private FirebaseAuth firebaseAuth;
+    private TextView viewName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_hompage);
         firebaseAuth=FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        viewName = (TextView) findViewById(R.id.teacherView);
+        viewName.setText("Welcome " + user.getDisplayName());
+
     }
 
     //Manage quizzes

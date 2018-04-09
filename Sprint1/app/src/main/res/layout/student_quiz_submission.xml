@@ -18,11 +18,16 @@
         android:layout_height="wrap_content"
         android:text="Grade"
         android:textSize="18sp" />
+    <EditText
+        android:id="@+id/view1Grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickExit"
         android:text="Exit" />
 
 </LinearLayout>

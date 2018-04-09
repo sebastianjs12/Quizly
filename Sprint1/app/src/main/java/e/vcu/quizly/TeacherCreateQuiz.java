@@ -13,34 +13,34 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 import java.util.HashMap;
 import java.util.Map;
+
 
 /**
  * Created by Max Vandenesse on 3/26/2018.
  */
 
 public class TeacherCreateQuiz extends Activity {
-    private static FirebaseDatabase fb;
-    private static FirebaseAuth firebaseAuth;
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ref;
-    public Quiz quiz = new Quiz();
 
-    public TeacherCreateQuiz() {
-        ref = database.getReference();
-    }
+    private static FirebaseAuth firebaseAuth;
+    public DatabaseHelper helper = new DatabaseHelper();
+    public Quiz quiz = new Quiz();
+    Question curQ=new Question();
+    int dueDate;
+    String quizKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_create_quiz);
+        Bundle bundle = getIntent().getExtras();
+        quiz= new Quiz();
+        dueDate = bundle.getInt("dueDate");
+        quizKey = bundle.getString("key");
         firebaseAuth= FirebaseAuth.getInstance();
     }
-
-
-
-
 
 
     // Adds a question to the quiz
@@ -59,6 +59,25 @@ public class TeacherCreateQuiz extends Activity {
             EditText correctTextEdit =(EditText)findViewById(R.id.correctTextEdit);
             String correct = correctTextEdit.getText().toString();
 
+            curQ = new Question();
+            quiz=PostQuizCreation.getQuiz();
+            curQ.setQuestion(questionStr);
+            curQ.setAnswerChoiceA(choice1Str);
+            curQ.setAnswerChoiceB(choice2Str);
+            curQ.setAnswerChoiceC(choice3Str);
+            curQ.setAnswerChoiceD(choice4Str);
+            curQ.setCorrectAnswer(correct);
+            quiz.addQuestion(curQ);
+
+            question.setText("");
+            choice1.setText("");
+            choice2.setText("");
+            choice3.setText("");
+            choice4.setText("");
+            correctTextEdit.setText("");
+            /*
+
+>>>>>>> 5f511ae343a4f0fb8f2308e753d9537b2b9c8e2a
             char character = correct.charAt(0);
             Question q = new Question();
 
@@ -75,6 +94,7 @@ public class TeacherCreateQuiz extends Activity {
                 default : q.setCorrectAnswer(choice1Str); break;}
             quiz.addQuestion(q);
             quiz.setTeacher(firebaseAuth.getCurrentUser().getEmail());
+<<<<<<< HEAD
 
             DatabaseReference quizChild = ref.child("quizzes");
             Map<String, Quiz> quizzes = new HashMap<>();
@@ -90,10 +110,22 @@ public class TeacherCreateQuiz extends Activity {
             //Send to database
             //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
             //Whats the correct answer to this question?
+=======
+            //Send to database
+            //sendToDataBase(questionStr, choice1Str, choice2Str, choice3Str,choice4Str);
+            //Whats the correct answer to this question?
+            */
         }
     }
     public void clickFinishQuiz(View v) {
         if (v.getId() == R.id.finishQuiz) {
+            quiz.setDueDate(dueDate);
+            quiz.setQuizID();
+            quiz.setKey(quiz.getQuizID());
+            quiz.setTeacher(firebaseAuth.getCurrentUser().getEmail());
+            quiz.setKey(quizKey);
+            helper.insertQuiz(quiz);
+            quiz = new Quiz();
             Intent i = new Intent(TeacherCreateQuiz.this, TeacherHomepage.class);
             startActivity(i);
         }

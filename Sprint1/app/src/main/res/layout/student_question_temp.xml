@@ -12,6 +12,7 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
+
     <RadioButton
         android:id="@+id/AnswerChoice1"
         android:layout_width="match_parent"
@@ -35,12 +36,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="D" />
+    
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/radioGroup">
 
+        <RadioButton
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton" />
+
+        <RadioButton
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+
+            />
+
+        <RadioButton
+            android:id="@+id/c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton" />
+
+        <RadioButton
+            android:id="@+id/d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton" />
+
+    </RadioGroup>
     <Button
         android:id="@+id/nextQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickNext"
         android:text="Next" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickExit"
+        android:text="Exit" />
 
 </LinearLayout>

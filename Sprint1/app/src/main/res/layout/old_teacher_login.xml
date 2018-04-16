@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/teacherLoginText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Teacher Login"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/teacherUsernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password" />
+
+    <EditText
+        android:id="@+id/teacherPasswordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/teacherAuthenticateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickTeacherAuthenticate"
+        android:text="Log In" />
+
+    <Button
+        android:id="@+id/teacherCreateAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickTeacherCreate"
+        android:text="Create Account" />
+
+    <Button
+        android:id="@+id/teacherBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickTeacherBackToMain"
+        android:text="Back" />
+</LinearLayout>

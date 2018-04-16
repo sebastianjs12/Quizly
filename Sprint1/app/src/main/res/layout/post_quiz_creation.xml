@@ -21,17 +21,16 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/dateText"
+        android:id="@+id/mDisplayDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Due Date (DD/MM/YYYY)" />
-
-    <EditText
-        android:id="@+id/duedate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date" />
+        android:text="Set Date"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:freezesText="true"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/teacher_add_questions"

@@ -1,60 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:orientation="vertical">
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:background="@drawable/background_gradient">
 
-    <TextView
-        android:id="@+id/teacherLoginText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Student Login"
-        android:textSize="30sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email" />
+        <!-- Here you can put your logo or brand name -->
 
-    <EditText
-        android:id="@+id/teacherUsernameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="81dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="48dp"
+            android:padding="3dp"
+            android:src="@drawable/quizly_logo" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/person_icon"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Student Email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColorHint="#fff" />
 
-    <EditText
-        android:id="@+id/teacherPasswordText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f9d7db" />
 
-    <Button
-        android:id="@+id/studentAuthenticateButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clickStudentAuthenticate"
-        android:text="Login" />
+        <EditText
+            android:id="@+id/teacherPasswordText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/white_lock"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColorHint="#fff" />
 
-    <Button
-        android:id="@+id/studentCreateAccountButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clickStudentCreate"
-        android:text="Create Account" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f9d7db" />
 
-    <Button
-        android:id="@+id/studentBackButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clickStudentBackToMain"
-        android:text="Back" />
+        <Button
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button"
+            android:clickable="true"
+            android:onClick="clickStudentAuthenticate"
+            android:padding="0dp"
+            android:text="Log in"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/studentCreateAccountButton"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/signup_button"
+            android:clickable="true"
+            android:onClick="clickStudentCreate"
+            android:padding="0dp"
+            android:text="Create an Account"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/studentBackButton"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_button"
+            android:clickable="true"
+            android:onClick="clickStudentBackToMain"
+            android:padding="0dp"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
 </LinearLayout>

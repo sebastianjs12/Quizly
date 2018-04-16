@@ -37,7 +37,7 @@ public class TeacherLogin extends Activity {
         }
     }
 
-//gathers username and password, wait for database
+    //gathers username and password, wait for database
     public void clickTeacherAuthenticate(View v) {
         if (v.getId() == R.id.teacherAuthenticateButton) {
             //gather username and password and store to strings

@@ -45,17 +45,17 @@ public class StudentAddQuiz extends Activity {
                 Toast.makeText(this, "This quiz does not exist! Please enter a Quiz ID",
                         Toast.LENGTH_SHORT).show();
             }
-            //Checks data in firebase for Quizid
+            //Checks data in firebase for QuizID
             else {
-                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-
-                if(new Date().after(quiz.getDueDate())){
-                    Toast.makeText(this, "This quiz has closed!",
-                            Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if(new Date().before(quiz.getDueDate())){
                     Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
                     startActivity(i);
+                }
+                else {
+                    System.out.println(quiz.getDueDate());
+                    Toast.makeText(this, "This quiz has closed!",
+                            Toast.LENGTH_SHORT).show();
+
                 }
             }
         }

@@ -81,6 +81,7 @@ public class Quiz {
     }
     public void setDueDate(String dueDate) throws ParseException {
         this.due=SDF.parse(dueDate);
+        System.out.println(this.due); // Debugging purposes, outputs date object
     }
     public Date getDueDate(){
         return due;

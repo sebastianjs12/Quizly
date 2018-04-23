@@ -3,6 +3,9 @@ package e.vcu.quizly;
 
 
 //import java.text.SimpleDateFormat;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -10,8 +13,18 @@ import java.util.Random;
  * Created by Max Vandenesse on 4/3/2018.
  */
 
-public class Quiz {
+public class Quiz implements Parcelable{
     //private SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
+    public static final Parcelable.Creator CREATOR =
+            new Parcelable.Creator() {
+                public Quiz createFromParcel(Parcel in) {
+                    return new Quiz(in);
+                }
+
+                public Quiz[] newArray(int size) {
+                    return new Quiz[size];
+                }
+            };
     private int qNum=-1;
     private int correct=0;
     private int  questionCounter=0;
@@ -31,6 +44,18 @@ public class Quiz {
         grades=new String[1000][2];
         key = "";
     }
+    public Quiz(Parcel in){
+        qNum = in.readInt();
+        correct = in.readInt();
+        questionCounter = in.readInt();
+        quizID = in.readString();
+        teacher = in.readString();
+        dueDate = in.readInt();
+        in.readList(quiz, null);
+        //grades = in.read
+        key = in.readString();
+    }
+
     public void setKey(String str){
         this.key = str;
     }
@@ -158,4 +183,22 @@ public class Quiz {
         return (int)grade;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(qNum);
+        parcel.writeInt(correct);
+        parcel.writeInt(questionCounter);
+        parcel.writeString(quizID);
+        parcel.writeString(teacher);
+        parcel.writeInt(dueDate);
+        parcel.writeList(quiz);
+        //parcel.writeStringArray(grades);
+        parcel.writeString(key);
+
+    }
 }

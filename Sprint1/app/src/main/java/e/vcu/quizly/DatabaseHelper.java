@@ -32,7 +32,8 @@ public class DatabaseHelper {
         quizChild.setValue(quizzes);
     }
 
-    public Quiz getQuiz(String key){
+    public void getQuiz(final String key){
+        Quiz temp;
         ref.child("quizzes").addValueEventListener(new ValueEventListener() {
             // THis method will be envoked anytime the data on the database changes
             //Connect as soon as we connect to listener, so we get an inital snapshot of the database
@@ -42,26 +43,27 @@ public class DatabaseHelper {
                 for (DataSnapshot child: children) {
                     Quiz temp = child.getValue(Quiz.class);
                     quizList.add(temp);
+                    for (Quiz quiz: quizList) {
+                        if(quiz.getKey() == key){
+                            temp = quiz;
+                            break;
+                        }
+                    }
                 }
 
             }
-            
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-        for (Quiz q: quizList) {
-            if(q.getKey() == key){
-                this.send = q;
-            }
-
-        }
-        if(send == null){
+    }
+    public Quiz sendQuiz(Quiz q){
+        if(q == null){
             return null;
         }
         else{
-            return send;
+            return q;
         }
     }
     public Quiz setDueDate(int i, Quiz quiz){

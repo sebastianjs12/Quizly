@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class StudentQuestionTemp extends Activity {
     // Quiz and Question objects
-    Quiz quiz = new Quiz();
+    Quiz quiz;
     Question q = new Question();
     boolean correct=false;
 
@@ -36,7 +36,9 @@ public class StudentQuestionTemp extends Activity {
         super.onCreate(savedInstanceState);
         firebaseAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = firebaseAuth.getCurrentUser();
-        quiz=CreateQuiz.getQuiz();
+        Bundle quizTemp = getIntent().getExtras();
+        quiz = (Quiz) quizTemp.getParcelable("quiz");
+        //quiz=CreateQuiz.getQuiz();
 
         q=quiz.getNextQuestion();
         if(q!=null) {

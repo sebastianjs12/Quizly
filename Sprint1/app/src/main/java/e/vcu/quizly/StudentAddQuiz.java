@@ -3,6 +3,7 @@ package e.vcu.quizly;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import java.util.Date;
 
 public class StudentAddQuiz extends Activity {
     FirebaseAuth firebaseAuth;
+    DatabaseHelper helper;
 
     Quiz quiz;
     @Override
@@ -26,6 +28,7 @@ public class StudentAddQuiz extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_add_quiz);
         firebaseAuth = FirebaseAuth.getInstance();
+        helper = new DatabaseHelper();
 
         //test input
         //newQuiz.build();
@@ -36,31 +39,31 @@ public class StudentAddQuiz extends Activity {
     //Add Quiz
     public void clickAddQuiz(View v) {
         if (v.getId() == R.id.addQuiz) {
-            System.out.println(quiz.getQuizID()+"*******************");
             //gather username and password and store to strings
-            EditText ID =(EditText)findViewById(R.id.QuizIdInput);
-            String IDStr = ID.getText().toString();
+            EditText ID = (EditText) findViewById(R.id.QuizIdInput);
+            final String IDStr = ID.getText().toString();
+            //Checks data in firebase for Quizid
+            //TODO
+            //System.out.println(quiz.getQuizID()+"*******************");
+            //gather username and password and store to strings
             //print quiz ID
-            if(!IDStr.equals(quiz.getQuizID())){
-                Toast.makeText(this, "This quiz does not exist! Please enter a Quiz ID",
-                        Toast.LENGTH_SHORT).show();
-            }
-            //Checks data in firebase for QuizID
-            else {
-                if(new Date().before(quiz.getDueDate())){
-                    Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
-                    startActivity(i);
+            helper.getQuiz(IDStr, new DatabaseHelper.QuizReceivedCallback() {
+                @Override
+                public void onQuizRecieved(Quiz quiz) {
+                    if (quiz == null) {
+                        Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
+                        i.putExtra("quiz", (Parcelable) quiz);
+                        startActivity(i);
+                    }
                 }
-                else {
-                    System.out.println(quiz.getDueDate());
-                    Toast.makeText(this, "This quiz has closed!",
-                            Toast.LENGTH_SHORT).show();
-
-                }
-            }
+            });
         }
     }
-    //Back To Homepage
+
+            //Back To Homepage
     public void clickBackToManage(View v) {
         if (v.getId() == R.id.StudentBack) {
             Intent i = new Intent(StudentAddQuiz.this, StudentHomepage.class);

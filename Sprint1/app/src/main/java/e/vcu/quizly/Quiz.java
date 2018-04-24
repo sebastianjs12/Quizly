@@ -1,5 +1,7 @@
 package e.vcu.quizly;
 
+import android.os.Parcel;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,12 +23,32 @@ public class Quiz {
     private int dueDate;
     private LinkedList<Question> quiz;
     private String[][] grades;
+    private String key;
     public Quiz(){
         quizID="1234";
         teacher="";
         dueDate=0;
         quiz=new LinkedList<>();
         grades=new String[1000][2];
+        key="";
+    }
+    public Quiz(Parcel in){
+        qNum = in.readInt();
+        correct = in.readInt();
+        questionCounter = in.readInt();
+        quizID = in.readString();
+        teacher = in.readString();
+        dueDate = in.readInt();
+        in.readList(quiz, null);
+        //grades = in.read
+        key = in.readString();
+    }
+
+    public void setKey(String str){
+        this.key = str;
+    }
+    public String getKey(){
+        return this.key;
     }
     public void addQuestion(Question question){
         quiz.add(question);

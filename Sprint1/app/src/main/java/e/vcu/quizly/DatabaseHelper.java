@@ -2,6 +2,7 @@ package e.vcu.quizly;
 
 import android.support.annotation.Nullable;
 
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,7 +21,7 @@ public class DatabaseHelper {
 
     private final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
-    public void addQuiz(Quiz newQuiz){
+    public void addQuiz(Quiz newQuiz) {
         ref.child("quizzes").push().setValue(newQuiz);
     }
 
@@ -40,7 +41,6 @@ public class DatabaseHelper {
                 callback.onQuizRecieved(null);
 
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         });

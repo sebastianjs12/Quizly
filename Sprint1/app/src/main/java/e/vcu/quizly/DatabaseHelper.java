@@ -26,10 +26,9 @@ public class DatabaseHelper {
 
 
 
-    public void insertQuiz(Quiz q){
-
-        quizChild = ref.child("quizzes").push();
-        quizChild.setValue(quizzes);
+    public void addQuiz(Quiz q){
+        //add quiz to database
+        ref.child("quizzes").push().setValue(q);
     }
 
     public void getQuiz(final String key){

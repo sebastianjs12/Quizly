@@ -70,7 +70,7 @@ public class PostQuizCreation extends Activity {
             }
         };
 
-        quiz=CreateQuiz.getQuiz();
+        //quiz=CreateQuiz.getQuiz();
         quiz.setQuizID();
         qID.setText(quiz.getQuizID());
         System.out.println("THIS IS THE QUIZ ID : "+quiz.getQuizID()); // Debugging purposes, quizID will be temporarily stored in console for quick access

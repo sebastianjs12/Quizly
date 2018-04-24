@@ -25,7 +25,7 @@ public class DatabaseHelper {
         ref.child("quizzes").push().setValue(newQuiz);
     }
 
-    public void getQuiz(final String key, final QuizReceivedCallback callback){
+    public void getQuiz(final String quizID, final QuizReceivedCallback callback){
         ref.child("quizzes").addListenerForSingleValueEvent(new ValueEventListener() {
             // This method will be envoked anytime the data on the database changes
             //Connect as soon as we connect to listener, so we get an inital snapshot of the database
@@ -33,7 +33,7 @@ public class DatabaseHelper {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot child: dataSnapshot.getChildren()) {
                     Quiz quiz = child.getValue(Quiz.class);
-                    if (quiz != null && quiz.getKey().equals(key)) {
+                    if (quiz != null && quiz.getQuizID().equals(quizID)) {
                         callback.onQuizRecieved(quiz);
                         return;
                     }

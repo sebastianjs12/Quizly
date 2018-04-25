@@ -37,6 +37,7 @@
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:padding="8dp"
+            android:textColor="@android:color/white"
             android:textColorHint="#fff" />
 
         <View
@@ -57,6 +58,7 @@
             android:inputType="textPassword"
             android:maxLines="1"
             android:padding="8dp"
+            android:textColor="@android:color/white"
             android:textColorHint="#fff" />
 
         <View

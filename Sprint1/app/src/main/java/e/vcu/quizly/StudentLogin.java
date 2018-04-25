@@ -45,9 +45,9 @@ public class StudentLogin extends Activity {
     public void clickStudentAuthenticate(View v) {
         if (v.getId() == R.id.studentAuthenticateButton) {
             //gather username and password and store to strings
-            EditText userName =(EditText)findViewById(R.id.teacherUsernameText);
+            EditText userName =(EditText)findViewById(R.id.studentUsernameText);
             usernameStr = userName.getText().toString();
-            EditText password =(EditText)findViewById(R.id.teacherPasswordText);
+            EditText password =(EditText)findViewById(R.id.studentPasswordText);
             passwordStr = password.getText().toString();
             userLogin();
 

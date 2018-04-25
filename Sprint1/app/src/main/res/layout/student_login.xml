@@ -25,6 +25,7 @@
             android:src="@drawable/quizly_logo" />
 
         <EditText
+            android:id="@+id/studentUsernameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -44,7 +45,7 @@
             android:background="#f9d7db" />
 
         <EditText
-            android:id="@+id/teacherPasswordText"
+            android:id="@+id/studentPasswordText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -64,6 +65,7 @@
             android:background="#f9d7db" />
 
         <Button
+            android:id="@+id/studentAuthenticateButton"
             style="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -34,7 +35,7 @@ public class StudentAddQuiz extends Activity {
     }
 
     //Add Quiz
-    public void clickAddQuiz(View v) {
+    public void clickAddQuiz(View v) throws ParseException {
         if (v.getId() == R.id.addQuiz) {
             //gather username and password and store to strings
             EditText ID = (EditText) findViewById(R.id.QuizIdInput);
@@ -43,8 +44,17 @@ public class StudentAddQuiz extends Activity {
             quiz=helper.getQuiz(IDStr);
 
                 if(quiz!=null){
-                    Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
-                    startActivity(i);
+                    //parse date and validate
+                    //SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
+                    //Date dueDate = SDF.parse(quiz.getDueDate());
+                    //Date today = new Date();
+                    //if(dueDate.after(today)) {
+                        Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
+                        startActivity(i);
+                    /*}
+                    else
+                        Toast.makeText(getApplicationContext(), "This quiz has closed",Toast.LENGTH_SHORT).show();
+                    */
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",

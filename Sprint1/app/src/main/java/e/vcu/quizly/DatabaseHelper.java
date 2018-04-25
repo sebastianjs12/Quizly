@@ -92,7 +92,6 @@ public class DatabaseHelper {
                     String key=child.getKey();
                     if (quiz != null && quizID.equals(quiz.getQuizID())) {
                         //delete quiz
-                        System.out.println("*******************"+quiz.getQuizID()+" "+key);
                         ref.child("quizzes").child(key).removeValue();
                         flag=true;
                         return;

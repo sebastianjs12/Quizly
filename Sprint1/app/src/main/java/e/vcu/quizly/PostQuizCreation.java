@@ -29,6 +29,7 @@ public class PostQuizCreation extends Activity {
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     static Quiz quiz=new Quiz();
+    String dueDate="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,15 +68,14 @@ public class PostQuizCreation extends Activity {
                 String date = formattedMonth + "/" +formattedDayOfMonth+ "/" + year;
                 mDisplayDate.setText(date);
 
+                //set dueDate as String
+                //quiz.setDueDate(month+day+year+"");
             }
         };
-
-        //quiz=CreateQuiz.getQuiz();
         quiz.setQuizID();
         qID.setText(quiz.getQuizID());
+
         System.out.println("THIS IS THE QUIZ ID : "+quiz.getQuizID()); // Debugging purposes, quizID will be temporarily stored in console for quick access
-        //CreateQuiz newQuiz=new CreateQuiz();
-        //newQuiz.build();
 
     }
     public void clickAddQuestions(View v) throws ParseException {

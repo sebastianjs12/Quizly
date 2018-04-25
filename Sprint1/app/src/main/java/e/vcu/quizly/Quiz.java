@@ -12,36 +12,28 @@ import java.util.Scanner;
  */
 
 public class Quiz {
-    //    public static final SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
-//    private Date due;
-    private int qNum = -1;
-    private int correct = 0;
-    private int questionCounter = 0;
+    private int qNum;
+    private int correct;
+    private int questionCounter;
     private String quizID;
     private String teacher;
-    private int dueDate;
+    private String dueDate;
     private List<Question> quiz;
     private List<Grade> grades;
     private String key;
-    public Quiz(Parcel in){
-        qNum = in.readInt();
-        correct = in.readInt();
-        questionCounter = in.readInt();
-        quizID = in.readString();
-        teacher = in.readString();
-        dueDate = in.readInt();
-        in.readList(quiz, null);
-        //grades = in.read
-        key = in.readString();
-    }
 
     public Quiz(){
         quizID="";
         teacher="";
-//        dueDate=0;
+        dueDate="";
+        qNum = -1;
+        correct = 0;
+        questionCounter = 0;
+        key="";
         quiz=new ArrayList<>();
         grades=new ArrayList<>();
-        key="";
+
+
     }
     public void setKey(String str){
         this.key = str;
@@ -116,14 +108,6 @@ public class Quiz {
         return quizID;
     }
 
-
-//    public void setDueDate(String dueDate) throws ParseException {
-//        this.due=SDF.parse(dueDate);
-//        System.out.println(this.due); // Debugging purposes, outputs date object
-//    }
-//    public Date getDueDate(){
-//        return due;
-//    }
     public void setTeacher(String teach){this.teacher = teach;}
     public String getTeacher(){return this.teacher;}
 
@@ -158,15 +142,6 @@ public class Quiz {
         questionCounter++;
     }
 
-    /*
-    //print all grades
-    public String getAllGrades(){
-        String output="";
-        for(String element:grades)
-            output=output+element+"\n";
-        return output;
-    }
-    */
     public void quizReset(){
         qNum=-1;
         correct=0;
@@ -199,6 +174,16 @@ public class Quiz {
         return output;
     }
 
+/*
+    //set duedate as string
+    public void setDueDate(String dueDate) {
+        this.dueDate=dueDate;
+    }
+    //get due date as string
+    public String getDueDate(){
+        return dueDate;
+    }
+*/
 }
 
 

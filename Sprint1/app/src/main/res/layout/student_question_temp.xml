@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@drawable/background_gradient"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="This is a sample question"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="24sp" />
     
     <RadioGroup
@@ -22,7 +24,8 @@
             android:id="@+id/a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton" />
+            android:onClick="checkButton"
+            android:textColor="@android:color/white" />
 
         <RadioButton
             android:id="@+id/b"
@@ -30,13 +33,14 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton"
 
-            />
+            android:textColor="@android:color/white" />
 
         <RadioButton
             android:id="@+id/c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton" />
+            android:onClick="checkButton"
+            android:textColor="@android:color/white" />
 
         <RadioButton
             android:id="@+id/d"
@@ -50,14 +54,18 @@
         android:id="@+id/nextQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
         android:onClick="clickNext"
-        android:text="Next" />
+        android:text="Next"
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/exitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickExit"
-        android:text="Exit" />
+        android:background="@drawable/exit_delete_but"
+        android:text="Exit"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -11,31 +12,48 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Homepage"
+        android:textColor="@android:color/white"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/teacherView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/teacherManage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickTeacherManage"
+        android:background="@drawable/login_button"
         android:text="Manage" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/CreateQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickCreateQuiz"
+        android:background="@drawable/signup_button"
         android:text="Create Quiz" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickLogout"
+        android:background="@drawable/exit_delete_but"
         android:text="Logout" />
 </LinearLayout>

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:onClick="clickAnalytics"
     android:orientation="vertical">
 
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Manage Quiz"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -18,21 +20,36 @@
         android:id="@+id/teacherAnalytics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/signup_button"
         android:onClick="clickGrades"
         android:text="Quiz Analytics" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="ClickDelete"
+        android:background="@drawable/exit_delete_but"
+        android:onClick="clickDelete"
         android:text="Delete Quiz" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickBackToHomepage"
+        android:background="@drawable/login_button"
         android:text="Back" />
 
 </LinearLayout>

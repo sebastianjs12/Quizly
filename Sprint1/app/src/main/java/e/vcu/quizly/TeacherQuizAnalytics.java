@@ -31,8 +31,8 @@ public class TeacherQuizAnalytics extends Activity{
                 String quizIDStr = quizID.getText().toString();
                 if (quiz.getQuizID().equals(quizIDStr)) {
                     viewGrades = (TextView) findViewById(R.id.grades);
-                    String output = quiz.getAllGrades();
-                    viewGrades.setText(output);
+                    //String output = quiz.getAllGrades();
+                    //viewGrades.setText(output);
                 }
                 else{
                     Toast.makeText(this, "This quiz does not exist! Please enter a Quiz ID",

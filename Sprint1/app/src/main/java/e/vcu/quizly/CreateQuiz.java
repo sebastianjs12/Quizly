@@ -35,7 +35,7 @@ public class CreateQuiz {
             newQuiz.addQuestion(q);
         }
     for(int i=1;i<16;i++){
-            newQuiz.setGrade("user "+i,80+i);
+            newQuiz.setGrades("user "+i,80+i);
         }
 
     }

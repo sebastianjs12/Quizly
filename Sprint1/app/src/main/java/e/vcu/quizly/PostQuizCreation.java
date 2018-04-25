@@ -89,7 +89,7 @@ public class PostQuizCreation extends Activity {
             }
             else {
                 System.out.println(dueDateStr); // For debugging purposes, outputs Date string
-                quiz.setDueDate(dueDateStr); //Sets the date with the string, formatted MM/DD/YYYY
+//                quiz.setDueDate(dueDateStr); //Sets the date with the string, formatted MM/DD/YYYY
                 Intent i = new Intent(PostQuizCreation.this, TeacherCreateQuiz.class);
                 startActivity(i);
             }

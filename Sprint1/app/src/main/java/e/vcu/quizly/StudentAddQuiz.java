@@ -21,8 +21,8 @@ import java.util.Date;
 public class StudentAddQuiz extends Activity {
     FirebaseAuth firebaseAuth;
     DatabaseHelper helper;
-
-    Quiz quiz;
+    //create static quiz to take
+    static Quiz quiz=new Quiz();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +30,6 @@ public class StudentAddQuiz extends Activity {
         firebaseAuth = FirebaseAuth.getInstance();
         helper = new DatabaseHelper();
 
-        //test input
-        //newQuiz.build();
-        quiz = CreateQuiz.getQuiz();
 
     }
 
@@ -42,24 +39,19 @@ public class StudentAddQuiz extends Activity {
             //gather username and password and store to strings
             EditText ID = (EditText) findViewById(R.id.QuizIdInput);
             final String IDStr = ID.getText().toString();
-            //Checks data in firebase for Quizid
-            //TODO
-            //System.out.println(quiz.getQuizID()+"*******************");
-            //gather username and password and store to strings
-            //print quiz ID
-            helper.getQuiz(IDStr, new DatabaseHelper.QuizReceivedCallback() {
-                @Override
-                public void onQuizRecieved(Quiz quiz) {
-                    if (quiz == null) {
-                        Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",
-                                Toast.LENGTH_SHORT).show();
-                    } else {
-                        Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
-                        i.putExtra("quiz", (Parcelable) quiz);
-                        startActivity(i);
-                    }
+            //check database for quiz, if there flag will be set to true.
+            quiz=helper.getQuiz(IDStr);
+
+                if(quiz!=null){
+                    Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
+                    startActivity(i);
                 }
-            });
+                else {
+                    Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",
+                            Toast.LENGTH_SHORT).show();
+                    }
+
+
         }
     }
 
@@ -70,5 +62,6 @@ public class StudentAddQuiz extends Activity {
             startActivity(i);
         }
     }
+
 
 }

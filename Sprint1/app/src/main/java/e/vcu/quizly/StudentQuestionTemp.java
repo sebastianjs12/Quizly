@@ -36,11 +36,9 @@ public class StudentQuestionTemp extends Activity {
         super.onCreate(savedInstanceState);
         firebaseAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = firebaseAuth.getCurrentUser();
-        quiz=CreateQuiz.getQuiz();
+        quiz=StudentAddQuiz.quiz;
 
-        //Get intent from extras pushed from student and quiz
-        Bundle quizTemp = getIntent().getExtras();
-        quiz = (Quiz) quizTemp.getParcelable("quiz");
+
 
 
         q=quiz.getNextQuestion();

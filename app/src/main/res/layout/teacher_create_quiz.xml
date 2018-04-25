@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Question"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Question"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice A"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/answerOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="First answer "
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice B"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/answertwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Second answer"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice C"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/answerthree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Third answer"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer Choice D"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/answerfour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Fourth answer"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/correctAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correct Answer"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/correctTextEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Correct answer"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/addQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:background="@drawable/login_button"
+        android:onClick="clickAddQuestion"
+        android:text="Add Question"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="4sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/finishQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:background="@drawable/signup_button"
+        android:onClick="clickFinishQuiz"
+        android:text="Finish" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="4sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:background="@drawable/back_button"
+        android:onClick="clickCancel"
+        android:text="Cancel" />
+</LinearLayout>

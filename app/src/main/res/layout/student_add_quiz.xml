@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/availableQuizzes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Quiz"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Quiz ID"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/QuizIdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/addQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickAddQuiz"
+        android:background="@drawable/signup_button"
+        android:text="Add Quiz" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/StudentBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBackToManage"
+        android:background="@drawable/login_button"
+        android:text="Back" />
+
+
+</LinearLayout>

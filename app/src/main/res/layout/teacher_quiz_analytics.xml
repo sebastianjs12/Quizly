@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/quizNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quiz Analytics"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/questionResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Quiz ID"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/teacherQID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Student Grades"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/grades"
+        android:layout_width="match_parent"
+        android:layout_height="104dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Individual Question Statistics"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/IQA"
+        android:layout_width="match_parent"
+        android:layout_height="125dp" />
+
+    <Button
+        android:id="@+id/quizGrades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
+        android:onClick="clickGrades"
+        android:text="Submit"
+        android:visibility="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/teacherBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickTeacherBack"
+        android:background="@drawable/back_button"
+    android:text="Back" />
+</LinearLayout>

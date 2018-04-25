@@ -66,6 +66,12 @@ public class Question {
         correct++;
     }
     public int returnQuestionAnalytics(){
-        return correct/count;
+        return (correct/count)*100;
+    }
+    public int getCorrect(){
+        return correct;
+    }
+    public int getCount() {
+        return count;
     }
 }

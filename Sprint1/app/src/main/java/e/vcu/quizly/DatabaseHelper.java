@@ -27,6 +27,7 @@ public class DatabaseHelper {
     //create QUIZ object to be accessed
     Quiz quiz;
     static boolean flag=false;
+
     private final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
     public void addQuiz(Quiz newQuiz) {
@@ -68,6 +69,7 @@ public class DatabaseHelper {
 
     }
 
+    //Update quiz object in database
     public void updateQuiz(Quiz quiz) {
 
         //remove old quiz
@@ -76,6 +78,35 @@ public class DatabaseHelper {
         addQuiz(quiz);
     }
 
+    //Delete quiz object in dataBase
+    public boolean deleteQuiz(final String quizID) {
 
+        ref.child("quizzes").addListenerForSingleValueEvent(new ValueEventListener() {
+            // This method will be envoked anytime the data on the database changes
+            //Connect as soon as we connect to listener, so we get an inital snapshot of the database
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //find the quiz
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    quiz = child.getValue(Quiz.class);
+                    String key=child.getKey();
+                    if (quiz != null && quizID.equals(quiz.getQuizID())) {
+                        //delete quiz
+                        System.out.println("*******************"+quiz.getQuizID()+" "+key);
+                        ref.child("quizzes").child(key).removeValue();
+                        flag=true;
+                        return;
+                    }
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+        return flag;
+    }
 
 }

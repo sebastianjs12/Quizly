@@ -24,19 +24,22 @@ public class StudentQuizSubmission extends Activity{
         setContentView(R.layout.student_quiz_submission);
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
-       // quiz.setGrade(user.getEmail(),quiz.setInternalGrade());
-        viewGrade = (TextView) findViewById(R.id.view1Grade);
-       // String output=Integer.toString(quiz.getGrade(user.getEmail()));
-      //  viewGrade.setText("Grade: "+output);
 
+        //set grade
+        int grade=quiz.setInternalGrade();
+        quiz.setGrades(user.getEmail()+": "+user.getDisplayName(),grade);
+        //Display current grade
+        viewGrade = (TextView) findViewById(R.id.view1Grade);
+        viewGrade.setText("Grade: "+grade);
+
+        //Submit quiz and update database
+        quiz.quizReset();
+        DatabaseHelper helper = new DatabaseHelper();
+        helper.updateQuiz(quiz);
     }
     public void clickExit(View v) {
         if (v.getId() == R.id.exit) {
-            quiz.quizReset();
-            //quiz.setQuizID();
-            //System.out.println("***************"+quiz.getQuizID());
-            DatabaseHelper helper = new DatabaseHelper();
-            helper.updateQuiz(quiz);
+
             Intent i = new Intent(StudentQuizSubmission.this, StudentHomepage.class);
             startActivity(i);
         }

@@ -30,6 +30,7 @@
         <activity android:name=".TeacherManage" ></activity>
         <activity android:name=".TeacherQuizAnalytics" ></activity>
         <activity android:name=".TeacherQuizEdit" ></activity>
+        <activity android:name=".DeleteQuiz" ></activity>
     </application>
 
 </manifest>

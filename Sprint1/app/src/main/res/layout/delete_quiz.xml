@@ -2,37 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="clickAnalytics"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/selectQuizText"
+        android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Manage Quiz"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Enter Quiz ID" />
+
+    <EditText
+        android:id="@+id/quizID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/teacherAnalytics"
+        android:id="@+id/delete_quiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickGrades"
-        android:text="Quiz Analytics" />
+        android:onClick="onClickDelete"
+        android:text="Delete" />
 
     <Button
-        android:id="@+id/deleteButton"
+        android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="ClickDelete"
-        android:text="Delete Quiz" />
-
-    <Button
-        android:id="@+id/teacherBackButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clickBackToHomepage"
+        android:onClick="onClickBack"
         android:text="Back" />
-
 </LinearLayout>

@@ -1,5 +1,7 @@
 package e.vcu.quizly;
 
+import android.os.Parcel;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,30 +12,37 @@ import java.util.Scanner;
  */
 
 public class Quiz {
-//    public static final SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
+    //    public static final SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
 //    private Date due;
-    private int qNum=-1;
-    private int correct=0;
-    private int  questionCounter=0;
+    private int qNum = -1;
+    private int correct = 0;
+    private int questionCounter = 0;
     private String quizID;
     private String teacher;
     private int dueDate;
     private List<Question> quiz;
     private List<Grade> grades;
     private String key;
+    public Quiz(Parcel in){
+        qNum = in.readInt();
+        correct = in.readInt();
+        questionCounter = in.readInt();
+        quizID = in.readString();
+        teacher = in.readString();
+        dueDate = in.readInt();
+        in.readList(quiz, null);
+        //grades = in.read
+        key = in.readString();
+    }
+
     public Quiz(){
-        quizID="1234";
+        quizID="";
         teacher="";
 //        dueDate=0;
         quiz=new ArrayList<>();
         grades=new ArrayList<>();
         key="";
     }
-
-
-
-
-
     public void setKey(String str){
         this.key = str;
     }
@@ -45,12 +54,16 @@ public class Quiz {
         quiz.add(question);
     }
 
+    //set individual grade
     public void setGrades(String username,int grade){
         boolean flag = true;
         //iterate looking for previous user grade entry and replace else append
         for(Grade element:grades) {
-            if (element.getUsername().equals(username)) {
+            System.out.println("out username "+element.getUsername()+" grade "+element.getGrade()+" input "+username+" "+grade);
+            if (element.getUsername().trim().equals(username.trim())) {
                 element.setGrade(grade);
+
+                System.out.println("in username "+element.getUsername()+" grade "+element.getGrade()+" input "+username+" "+grade);
                 flag = false;
             }
         }
@@ -61,19 +74,21 @@ public class Quiz {
             newGrade.setGrade(grade);
             grades.add(newGrade);
         }
-
-
     }
-    public List<Grade> getGrades(String username){
+    //get individual grade
+    public Grade getGrades(String username){
             //iterate looking for username match else return null
-            for(Grade element:grades) {
-                if (element.getUsername().equals(username)) {
-                    return grades;
+            for(Grade grade:grades) {
+                if (grade.getUsername().equals(username)) {
+                    return grade;
                 }
             }
-                    return grades;
+                    return null;
     }
-
+    //print grades of all students who have taken the quiz Teacher use
+    public List<Grade> getAllGrades(){
+       return grades;
+    }
     public void setQuizID(){
         String alphabet ="abcdefghijklmnopqrstuvqxyz";
         String temp="";
@@ -164,30 +179,24 @@ public class Quiz {
         return (int)grade;
     }
 
-     static class Grade{
-         String username;
-         int grade;
-         Grade(){
-             username="";
-             grade=0;
-         }
+    //populate Quiz and json objects
 
-         public void setUsername(String username){
-            this.username=username;
-         }
-         public String getUsername(){
-             return username;
-         }
-         public void setGrade(int grade){
-             this.grade=grade;
-         }
-         public int getGrade(){
-             return grade;
-         }
-         public String toString(){
-             return username+" "+grade+"\n";
-         }
+    public void setGrades(List<Grade> in){
+        for(Grade grade :in)
+        grades.add(grade);
+    }
+    public List<Grade> getGrades(){
+        return grades;
+    }
 
+    //return individual question sttistics
+    public String getIQA(){
+        String output="";
+        int c=0;
+        for(Question q:quiz){
+            output=output+"("+(++c)+") "+q.getQuestion()+" "+q.getCorrect()+"/"+q.getCount()+"\n";
+        }
+        return output;
     }
 
 }

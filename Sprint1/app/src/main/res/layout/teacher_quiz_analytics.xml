@@ -31,13 +31,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Grades"
+        android:text="Student Grades"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/grades"
         android:layout_width="match_parent"
-        android:layout_height="278dp" />
+        android:layout_height="104dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Individual Question Statics"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/IQA"
+        android:layout_width="match_parent"
+        android:layout_height="155dp" />
 
     <Button
         android:id="@+id/quizGrades"

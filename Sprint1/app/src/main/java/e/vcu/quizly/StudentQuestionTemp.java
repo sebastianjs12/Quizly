@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class StudentQuestionTemp extends Activity {
     // Quiz and Question objects
-    Quiz quiz = new Quiz();
+    Quiz quiz;
     Question q = new Question();
     boolean correct=false;
 
@@ -44,6 +44,7 @@ public class StudentQuestionTemp extends Activity {
         q=quiz.getNextQuestion();
         if(q!=null) {
             quiz.questionCounter();
+            q.incrementQuestionCounter();
             setContentView(R.layout.student_question_temp);
 
             radioGroup = findViewById(R.id.radioGroup); //Selects radioGroup on layout
@@ -85,8 +86,10 @@ public class StudentQuestionTemp extends Activity {
                         studentAnswers.add((String) rb2.getText());
 
                         //check if answer is correct and record grade
-                        if(rb2.getText().equals(q.getCorrectAnswer()))
+                        if(rb2.getText().equals(q.getCorrectAnswer())){
                             quiz.incrementCorrect();
+                            q.incrementCorrect();
+                        }
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);
                         startActivity(i);
                     } else if (radioId == rb3.getId()) { // Answer choice C is selected (2131165236)
@@ -94,8 +97,10 @@ public class StudentQuestionTemp extends Activity {
                         studentAnswers.add((String) rb3.getText());
 
                         //check if answer is correct and record grade
-                        if(rb3.getText().equals(q.getCorrectAnswer()))
+                        if(rb3.getText().equals(q.getCorrectAnswer())){
                             quiz.incrementCorrect();
+                            q.incrementCorrect();
+                        }
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);
                         startActivity(i);
                     } else {// Answer choice D is selected (2131165248)
@@ -103,8 +108,10 @@ public class StudentQuestionTemp extends Activity {
                         studentAnswers.add((String) rb4.getText());
 
                         //check if answer is correct and record grade
-                        if(rb4.getText().equals(q.getCorrectAnswer()))
+                        if(rb4.getText().equals(q.getCorrectAnswer())) {
                             quiz.incrementCorrect();
+                            q.incrementCorrect();
+                        }
                         Intent i = new Intent(StudentQuestionTemp.this, StudentQuestionTemp.class);
                         startActivity(i);
                     }

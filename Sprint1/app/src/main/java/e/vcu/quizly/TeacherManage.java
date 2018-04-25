@@ -30,4 +30,11 @@ public class TeacherManage extends Activity {
             startActivity(i);
         }
     }
+    //delete quiz
+    public void ClickDelete(View v) {
+        if (v.getId() == R.id.deleteButton) {
+            Intent i = new Intent(TeacherManage.this, DeleteQuiz.class);
+            startActivity(i);
+        }
+    }
 }

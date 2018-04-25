@@ -64,6 +64,9 @@ public class Quiz {
 
 
     }
+    public List<Grade> getGradeList(){
+        return this.grades;
+    }
     public List<Grade> getGrades(String username){
             //iterate looking for username match else return null
             for(Grade element:grades) {

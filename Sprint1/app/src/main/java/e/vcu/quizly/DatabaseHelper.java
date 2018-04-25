@@ -13,6 +13,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
+import java.util.ArrayList;
+
 import static android.content.ContentValues.TAG;
 
 public class DatabaseHelper {
@@ -70,6 +72,32 @@ public class DatabaseHelper {
         ref.child("quizzes").child(quiz.getKey()).removeValue();
         //add updated quiz
         addQuiz(quiz);
+    }
+    public void setGrades(final Quiz q){
+        ref.child("quizzes").addListenerForSingleValueEvent(new ValueEventListener() {
+            // This method will be envoked anytime the data on the database changes
+            //Connect as soon as we connect to listener, so we get an inital snapshot of the database
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String key;
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    //get key to identify child for update
+                    key = child.getKey();
+                    quiz = child.getValue(Quiz.class);
+                    if (quiz != null && q.getQuizID().equals(quiz.getQuizID())) {
+                        ref.child("gb").child(key).setValue(q.getGradeList());
+                        break;
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
     }
 
 

@@ -73,6 +73,7 @@ public class DatabaseHelper {
         //add updated quiz
         addQuiz(quiz);
     }
+    //Updates grades for quiz in firebase
     public void setGrades(final Quiz q){
         ref.child("quizzes").addListenerForSingleValueEvent(new ValueEventListener() {
             // This method will be envoked anytime the data on the database changes

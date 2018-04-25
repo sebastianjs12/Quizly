@@ -36,6 +36,7 @@ public class StudentQuizSubmission extends Activity{
             //quiz.setQuizID();
             //System.out.println("***************"+quiz.getQuizID());
             DatabaseHelper helper = new DatabaseHelper();
+            //Sets grades
             helper.setGrades(quiz);
             Intent i = new Intent(StudentQuizSubmission.this, StudentHomepage.class);
             startActivity(i);

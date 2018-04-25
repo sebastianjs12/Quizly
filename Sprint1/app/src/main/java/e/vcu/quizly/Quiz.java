@@ -64,6 +64,7 @@ public class Quiz {
 
 
     }
+    //Returns grade list
     public List<Grade> getGradeList(){
         return this.grades;
     }

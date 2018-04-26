@@ -69,7 +69,7 @@ public class PostQuizCreation extends Activity {
                 mDisplayDate.setText(date);
 
                 //set dueDate as String
-                //quiz.setDueDate(month+day+year+"");
+                quiz.setA(month+"/"+day+"/"+year);
             }
         };
         quiz.setQuizID();

@@ -45,16 +45,16 @@ public class StudentAddQuiz extends Activity {
 
                 if(quiz!=null){
                     //parse date and validate
-                    //SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
-                    //Date dueDate = SDF.parse(quiz.getDueDate());
-                    //Date today = new Date();
-                    //if(dueDate.after(today)) {
+                    SimpleDateFormat SDF =  new SimpleDateFormat("MM/dd/yyyy");
+                    Date dueDate = SDF.parse(quiz.getA());
+                    Date today = new Date();
+                    if(dueDate.after(today)) {
                         Intent i = new Intent(StudentAddQuiz.this, StudentQuestionTemp.class);
                         startActivity(i);
-                    /*}
+                    }
                     else
                         Toast.makeText(getApplicationContext(), "This quiz has closed",Toast.LENGTH_SHORT).show();
-                    */
+
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",

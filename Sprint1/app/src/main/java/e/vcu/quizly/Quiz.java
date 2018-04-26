@@ -2,7 +2,10 @@ package e.vcu.quizly;
 
 import android.os.Parcel;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -25,7 +28,7 @@ public class Quiz {
     public Quiz(){
         quizID="";
         teacher="";
-        dueDate="";
+        dueDate="04/30/2018";
         qNum = -1;
         correct = 0;
         questionCounter = 0;
@@ -174,16 +177,17 @@ public class Quiz {
         return output;
     }
 
-/*
+
     //set duedate as string
-    public void setDueDate(String dueDate) {
+    public void setA(String dueDate) {
         this.dueDate=dueDate;
     }
     //get due date as string
-    public String getDueDate(){
+
+    public String getA() {
         return dueDate;
     }
-*/
+
 }
 
 

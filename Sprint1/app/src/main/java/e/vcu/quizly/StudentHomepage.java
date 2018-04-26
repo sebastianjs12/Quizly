@@ -26,8 +26,10 @@ public class StudentHomepage extends Activity{
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        viewName = (TextView) findViewById(R.id.studentView);
-            viewName.setText("Welcome " + user.getDisplayName());
+        if(user.getDisplayName()!=null) {
+            viewName = (TextView) findViewById(R.id.studentView);
+            viewName.setText(user.getDisplayName());
+        }
 
         if(firebaseAuth.getCurrentUser()==null){
             finish();

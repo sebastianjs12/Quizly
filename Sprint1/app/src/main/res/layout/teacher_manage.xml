@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
@@ -16,13 +17,21 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30sp"
+        android:visibility="invisible" />
+
     <Button
         android:id="@+id/teacherAnalytics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/signup_button"
         android:onClick="clickGrades"
-        android:text="Quiz Analytics" />
+        android:text="Quiz Analytics"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
@@ -34,9 +43,10 @@
         android:id="@+id/deleteButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/exit_delete_but"
+        android:background="@drawable/login_button"
         android:onClick="clickDelete"
-        android:text="Delete Quiz" />
+        android:text="Delete Quiz"
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:layout_width="match_parent"
@@ -48,8 +58,9 @@
         android:id="@+id/teacherBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/back_button"
         android:onClick="clickBackToHomepage"
-        android:background="@drawable/login_button"
-        android:text="Back" />
+        android:text="Back"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
 </LinearLayout>

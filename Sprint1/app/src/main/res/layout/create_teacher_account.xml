@@ -20,13 +20,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="First Name"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherFN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="First Name"
+        android:textColorHint="@android:color/white"
         android:inputType="textPersonName"
         android:textColor="@android:color/white" />
 
@@ -35,13 +38,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Last Name"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherLN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Last Name"
+        android:textColorHint="@android:color/white"
         android:inputType="textPersonName"
         android:textColor="@android:color/white" />
 
@@ -49,13 +55,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherUsernameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Email"
+        android:textColorHint="@android:color/white"
         android:inputType="textPersonName"
         android:textColor="@android:color/white" />
 
@@ -63,25 +72,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherPasswordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Password"
+        android:textColorHint="@android:color/white"
         android:inputType="textPassword"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherCreateSubmitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickTeacherCreateSubmit"
         android:background="@drawable/signup_button"
-        android:text="Submit" />
+        android:onClick="clickTeacherCreateSubmit"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
 
     <TextView
+        android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -93,7 +113,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/login_button"
         android:onClick="clickTeacherBackToLogin"
-        android:text="Back" />
+        android:text="Back"
+        android:textColor="@color/colorPrimary" />
 
     <ProgressBar
         android:id="@+id/progressbar"

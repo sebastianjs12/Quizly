@@ -14,13 +14,17 @@ public class DeleteQuiz extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_quiz);
     }
+    //delete quiz
+    int c=0;
     public void onClickDelete(View v) {
+
         if (v.getId() == R.id.delete_quiz) {
+            c++;
             EditText quizID = (EditText) findViewById(R.id.quizID);
             String quizIDStr = quizID.getText().toString();
             DatabaseHelper helper=new DatabaseHelper();
             boolean flag=helper.deleteQuiz(quizIDStr);
-            if(flag)
+            if(flag&&c>1)
                 Toast.makeText(this, "Quiz Deleted", Toast.LENGTH_LONG).show();
 
         }

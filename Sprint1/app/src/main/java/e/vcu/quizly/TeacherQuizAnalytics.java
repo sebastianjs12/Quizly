@@ -21,35 +21,37 @@ public class TeacherQuizAnalytics extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_quiz_analytics);
     }
+    //check statistics
+    int c=0;
     public void clickGrades(View v) {
-        if (v.getId() == R.id.quizGrades) {
 
+        if (v.getId() == R.id.quizGrades) {
+            c++;
             //gather quiz ID
             EditText quizID = (EditText) findViewById(R.id.teacherQID);
             String quizIDStr = quizID.getText().toString();
             //check database for quiz, if there flag will be set to true.
             quiz=helper.getQuiz(quizIDStr);
+            if(c>1) {
+                if (quiz != null) {
+                    //student stats
+                    viewGrades = (TextView) findViewById(R.id.grades);
+                    //individual question stats (IQA Individual Question Analytics
+                    viewIQA = (TextView) findViewById(R.id.IQA);
+                    String output1 = "";
+                    String output2 = "";
+                    for (Grade grade : quiz.getAllGrades()) {
+                        output1 = output1 + grade.toString();
+                    }
+                    output2 = quiz.getIQA();
+                    viewGrades.setText(output1);
+                    viewIQA.setText(output2);
 
-            if(quiz!=null){
-                //student stats
-                viewGrades = (TextView) findViewById(R.id.grades);
-                //individual question stats (IQA Individual Question Analytics
-                viewIQA = (TextView) findViewById(R.id.IQA);
-                String output1 ="";
-                String output2 ="";
-                for(Grade grade:quiz.getAllGrades()){
-                    output1=output1+grade.toString();
+                } else {
+                    Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",
+                            Toast.LENGTH_SHORT).show();
                 }
-                output2=quiz.getIQA();
-                viewGrades.setText(output1);
-                viewIQA.setText(output2);
-
             }
-            else {
-                Toast.makeText(getApplicationContext(), "This quiz does not exist! Please enter a Quiz ID",
-                        Toast.LENGTH_SHORT).show();
-            }
-
 
         }
     }

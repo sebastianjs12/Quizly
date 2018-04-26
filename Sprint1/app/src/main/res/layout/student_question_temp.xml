@@ -25,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="checkButton"
+            android:buttonTint="@android:color/white"
             android:textColor="@android:color/white" />
 
         <RadioButton
@@ -32,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="checkButton"
-
+            android:buttonTint="@android:color/white"
             android:textColor="@android:color/white" />
 
         <RadioButton
@@ -40,15 +41,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="checkButton"
+            android:buttonTint="@android:color/white"
             android:textColor="@android:color/white" />
 
         <RadioButton
             android:id="@+id/d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton" />
+            android:buttonTint="@android:color/white"
+            android:onClick="checkButton"
+            android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
     </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/nextQuestion"
@@ -57,14 +67,20 @@
         android:background="@drawable/login_button"
         android:onClick="clickNext"
         android:text="Next"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/exitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/back_button"
         android:onClick="clickExit"
-        android:background="@drawable/exit_delete_but"
         android:text="Exit"
         android:textColor="@android:color/white" />
 

@@ -19,15 +19,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/StudentAddQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickStudentAddQuiz"
         android:background="@drawable/signup_button"
-        android:text="Add Quiz" />
+        android:onClick="clickStudentAddQuiz"
+        android:text="Add Quiz"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
@@ -39,8 +48,9 @@
         android:id="@+id/studentLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickLogout"
         android:background="@drawable/login_button"
-        android:text="Logout" />
+        android:onClick="clickLogout"
+        android:text="Logout"
+        android:textColor="@color/colorPrimary" />
 
 </LinearLayout>

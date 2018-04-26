@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:orientation="vertical">
 
     <TextView
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Quiz Analytics"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -17,14 +19,18 @@
         android:id="@+id/questionResults"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Quiz ID" />
+        android:text="Enter Quiz ID"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherQID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Enter Quiz ID"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/textView3"
@@ -32,12 +38,14 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Student Grades"
+        android:textColor="@android:color/white"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/grades"
         android:layout_width="match_parent"
-        android:layout_height="104dp" />
+        android:layout_height="104dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
     <TextView
         android:id="@+id/textView9"
@@ -45,24 +53,36 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Individual Question Statistics"
+        android:textColor="@android:color/white"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/IQA"
         android:layout_width="match_parent"
-        android:layout_height="155dp" />
+        android:layout_height="140dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
     <Button
         android:id="@+id/quizGrades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/signup_button"
         android:onClick="clickGrades"
-        android:text="Submit" />
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/back_button"
         android:onClick="clickTeacherBack"
-        android:text="Back" />
+        android:text="Back"
+        android:textColor="@android:color/white" />
 </LinearLayout>

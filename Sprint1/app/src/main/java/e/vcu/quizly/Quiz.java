@@ -28,7 +28,7 @@ public class Quiz {
     public Quiz(){
         quizID="";
         teacher="";
-        dueDate="04/30/2018";
+        dueDate="";
         qNum = -1;
         correct = 0;
         questionCounter = 0;

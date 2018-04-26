@@ -73,7 +73,7 @@ public class PostQuizCreation extends Activity {
             }
         };
         quiz.setQuizID();
-        qID.setText(quiz.getQuizID());
+        qID.setText("Quiz ID: "+quiz.getQuizID());
 
         System.out.println("THIS IS THE QUIZ ID : "+quiz.getQuizID()); // Debugging purposes, quizID will be temporarily stored in console for quick access
 
@@ -84,7 +84,7 @@ public class PostQuizCreation extends Activity {
             //A user taps the textview object, selects a date from the picker, then has it displayed on the same object.
             TextView dueDate = (TextView) findViewById(R.id.mDisplayDate);
             String dueDateStr = dueDate.getText().toString();
-            if(dueDateStr.equals("Set Date")){ //If the TextView is unchanged, the user has not changed the date yet.
+            if(dueDateStr.equals("Set Due Date")){ //If the TextView is unchanged, the user has not changed the date yet.
                 Toast.makeText(this, "Set the Due Date to continue", Toast.LENGTH_LONG).show();
             }
             else {

@@ -23,9 +23,10 @@ public class TeacherHomepage extends Activity{
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        viewName = (TextView) findViewById(R.id.teacherView);
-        viewName.setText("Welcome " + user.getDisplayName());
-
+        if(user.getDisplayName()!=null) {
+            viewName = (TextView) findViewById(R.id.teacherView);
+            viewName.setText(user.getDisplayName());
+        }
     }
 
     //Manage quizzes

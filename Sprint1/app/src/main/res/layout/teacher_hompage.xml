@@ -19,17 +19,26 @@
         android:id="@+id/teacherView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherManage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickTeacherManage"
         android:background="@drawable/login_button"
-        android:text="Manage" />
+        android:onClick="clickTeacherManage"
+        android:text="Manage"
+        android:textColor="@color/colorPrimary" />
 
     <TextView
+        android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -39,9 +48,10 @@
         android:id="@+id/CreateQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickCreateQuiz"
         android:background="@drawable/signup_button"
-        android:text="Create Quiz" />
+        android:onClick="clickCreateQuiz"
+        android:text="Create Quiz"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
@@ -53,7 +63,8 @@
         android:id="@+id/teacherLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/back_button"
         android:onClick="clickLogout"
-        android:background="@drawable/exit_delete_but"
-        android:text="Logout" />
+        android:text="Logout"
+        android:textColor="@android:color/white" />
 </LinearLayout>

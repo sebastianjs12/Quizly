@@ -60,8 +60,9 @@
         android:id="@+id/teacher_home_but"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickBackButton"
         android:background="@drawable/login_button"
-        android:text="Back" />
+        android:onClick="clickBackButton"
+        android:text="Back"
+        android:textColor="@color/colorPrimary" />
 
 </LinearLayout>

@@ -20,14 +20,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter Quiz ID"
-        android:textColor="@android:color/white" />
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherQID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Enter Quiz ID"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/textView3"
@@ -55,22 +58,29 @@
     <TextView
         android:id="@+id/IQA"
         android:layout_width="match_parent"
-        android:layout_height="125dp" />
+        android:layout_height="140dp" />
 
     <Button
         android:id="@+id/quizGrades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/login_button"
+        android:background="@drawable/signup_button"
         android:onClick="clickGrades"
         android:text="Submit"
-        android:visibility="@color/colorPrimary" />
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickTeacherBack"
         android:background="@drawable/back_button"
-    android:text="Back" />
+        android:onClick="clickTeacherBack"
+        android:text="Back"
+        android:textColor="@android:color/white" />
 </LinearLayout>

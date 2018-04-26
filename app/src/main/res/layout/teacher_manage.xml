@@ -42,7 +42,7 @@
         android:id="@+id/deleteButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/exit_delete_but"
+        android:background="@drawable/back_button"
         android:onClick="clickDelete"
         android:text="Delete Quiz"
         android:textColor="@android:color/white" />
@@ -57,8 +57,9 @@
         android:id="@+id/teacherBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickBackToHomepage"
         android:background="@drawable/login_button"
-        android:text="Back" />
+        android:onClick="clickBackToHomepage"
+        android:text="Back"
+        android:textColor="@color/colorPrimary" />
 
 </LinearLayout>

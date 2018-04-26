@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:baselineAligned="false"
     android:orientation="vertical">
 
@@ -11,71 +12,104 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Create Student Account"
+        android:textColor="@android:color/white"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First Name" />
+        android:text="First Name"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/studentFN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Last Name" />
+        android:text="Last Name"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/studentLN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Last Name"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email" />
+        android:text="Email"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherUsernameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Email"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password" />
+        android:text="Password"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/teacherPasswordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Password"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/studentCreateSubmitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/signup_button"
         android:onClick="clickStudentCreateSubmit"
-        android:text="Submit" />
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/teacherCreateBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/back_button"
         android:onClick="clickStudentBackToLogin"
-        android:text="Back" />
+        android:text="Back"
+        android:textColor="@android:color/white" />
 
     <ProgressBar
         android:id="@+id/progressbar"

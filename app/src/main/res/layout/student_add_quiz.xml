@@ -33,9 +33,10 @@
         android:id="@+id/addQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickAddQuiz"
         android:background="@drawable/signup_button"
-        android:text="Add Quiz" />
+        android:onClick="clickAddQuiz"
+        android:text="Add Quiz"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
@@ -47,9 +48,10 @@
         android:id="@+id/StudentBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickBackToManage"
         android:background="@drawable/login_button"
-        android:text="Back" />
+        android:onClick="clickBackToManage"
+        android:text="Back"
+        android:textColor="@color/colorPrimary" />
 
 
 </LinearLayout>

@@ -131,7 +131,8 @@
         android:layout_height="40sp"
         android:background="@drawable/signup_button"
         android:onClick="clickFinishQuiz"
-        android:text="Finish" />
+        android:text="Finish"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
@@ -146,5 +147,6 @@
         android:layout_height="40sp"
         android:background="@drawable/back_button"
         android:onClick="clickCancel"
-        android:text="Cancel" />
+        android:text="Cancel"
+        android:textColor="@android:color/white" />
 </LinearLayout>

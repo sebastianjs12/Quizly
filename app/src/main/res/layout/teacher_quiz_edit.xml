@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:orientation="vertical">
 
     <TextView
@@ -10,12 +11,22 @@
         android:layout_height="wrap_content"
         android:text="Quiz 1"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="28sp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/delete_but"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete" />
+        android:background="@drawable/back_button"
+        android:text="Delete"
+        android:textColor="@android:color/white" />
 </LinearLayout>

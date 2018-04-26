@@ -40,9 +40,10 @@
         android:id="@+id/CreateQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="clickCreateQuiz"
         android:background="@drawable/signup_button"
-        android:text="Create Quiz" />
+        android:onClick="clickCreateQuiz"
+        android:text="Create Quiz"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
@@ -56,5 +57,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/back_button"
         android:onClick="clickLogout"
-        android:text="Logout" />
+        android:text="Logout"
+        android:textColor="@android:color/white" />
 </LinearLayout>
